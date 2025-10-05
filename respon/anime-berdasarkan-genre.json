@@ -1,0 +1,478 @@
+{
+  "creator": "Sanka Vollerei",
+  "message": "",
+  "data": {
+    "animeList": [
+      {
+        "title": "Sakamoto Days Cour 2",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/bx184237-OJAksU2fsIPx.jpg",
+        "type": "TV",
+        "score": "7.9",
+        "status": "Completed",
+        "animeId": "sakamoto-days-cour-2",
+        "href": "/samehadaku/anime/sakamoto-days-cour-2",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/sakamoto-days-cour-2/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adult Cast",
+            "genreId": "adult-cast",
+            "href": "/samehadaku/genres/adult-cast",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/adult-cast/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/samehadaku/genres/comedy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/comedy/"
+          },
+          {
+            "title": "Organized Crime",
+            "genreId": "organized-crime",
+            "href": "/samehadaku/genres/organized-crime",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/organized-crime/"
+          }
+        ]
+      },
+      {
+        "title": "Sidonia no Kishi Ai Tsumugu Hoshi",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/108354.jpg",
+        "type": "Movie",
+        "score": "7.45",
+        "status": "Completed",
+        "animeId": "sidonia-no-kishi-ai-tsumugu-hoshi",
+        "href": "/samehadaku/anime/sidonia-no-kishi-ai-tsumugu-hoshi",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/sidonia-no-kishi-ai-tsumugu-hoshi/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Sci-Fi",
+            "genreId": "sci-fi",
+            "href": "/samehadaku/genres/sci-fi",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/sci-fi/"
+          }
+        ]
+      },
+      {
+        "title": "Tougen Anki",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Tougen-Anki.jpg",
+        "type": "TV",
+        "score": "7.20",
+        "status": "Ongoing",
+        "animeId": "tougen-anki",
+        "href": "/samehadaku/anime/tougen-anki",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/tougen-anki/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Mythology",
+            "genreId": "mythology",
+            "href": "/samehadaku/genres/mythology",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/mythology/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/shounen/"
+          }
+        ]
+      },
+      {
+        "title": "Tate no Yuusha no Nariagari Season 4",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Tate-no-Yuusha-no-Nariagari-Season-4.jpg",
+        "type": "TV",
+        "score": "7.46",
+        "status": "Ongoing",
+        "animeId": "tate-no-yuusha-no-nariagari-season-4",
+        "href": "/samehadaku/anime/tate-no-yuusha-no-nariagari-season-4",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/tate-no-yuusha-no-nariagari-season-4/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Drama",
+            "genreId": "drama",
+            "href": "/samehadaku/genres/drama",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/drama/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Isekai",
+            "genreId": "isekai",
+            "href": "/samehadaku/genres/isekai",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/isekai/"
+          }
+        ]
+      },
+      {
+        "title": "Gachiakuta",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/150432.jpg",
+        "type": "TV",
+        "score": "8.02",
+        "status": "Ongoing",
+        "animeId": "gachiakuta",
+        "href": "/samehadaku/anime/gachiakuta",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/gachiakuta/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "Busamen Gachi Fighter",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/150515.jpg",
+        "type": "TV",
+        "score": "6.68",
+        "status": "Ongoing",
+        "animeId": "busamen-gachi-fighter",
+        "href": "/samehadaku/anime/busamen-gachi-fighter",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/busamen-gachi-fighter/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "Kizetsu Yuusha to Ansatsu Hime",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Kizetsu-Yuusha-to-Ansatsu-Hime.jpg",
+        "type": "TV",
+        "score": "6.28",
+        "status": "Ongoing",
+        "animeId": "kizetsu-yuusha-to-ansatsu-hime",
+        "href": "/samehadaku/anime/kizetsu-yuusha-to-ansatsu-hime",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/kizetsu-yuusha-to-ansatsu-hime/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/samehadaku/genres/comedy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/comedy/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/shounen/"
+          }
+        ]
+      },
+      {
+        "title": "Kaijuu 8-gou Season 2",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/150344.jpg",
+        "type": "TV",
+        "score": "7.9",
+        "status": "Ongoing",
+        "animeId": "kaijuu-8-gou-season-2",
+        "href": "/samehadaku/anime/kaijuu-8-gou-season-2",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/kaijuu-8-gou-season-2/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adult Cast",
+            "genreId": "adult-cast",
+            "href": "/samehadaku/genres/adult-cast",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/adult-cast/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Military",
+            "genreId": "military",
+            "href": "/samehadaku/genres/military",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/military/"
+          },
+          {
+            "title": "Sci-Fi",
+            "genreId": "sci-fi",
+            "href": "/samehadaku/genres/sci-fi",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/sci-fi/"
+          },
+          {
+            "title": "Urban Fantasy",
+            "genreId": "urban-fantasy",
+            "href": "/samehadaku/genres/urban-fantasy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/urban-fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "Dandadan Season 2",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/149001.jpg",
+        "type": "TV",
+        "score": "8.48",
+        "status": "Ongoing",
+        "animeId": "dandadan-season-2",
+        "href": "/samehadaku/anime/dandadan-season-2",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/dandadan-season-2/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Comedy",
+            "genreId": "comedy",
+            "href": "/samehadaku/genres/comedy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/comedy/"
+          },
+          {
+            "title": "Supernatural",
+            "genreId": "supernatural",
+            "href": "/samehadaku/genres/supernatural",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/supernatural/"
+          }
+        ]
+      },
+      {
+        "title": "Mizu Zokusei no Mahoutsukai",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Mizu-Zokusei-no-Mahoutsukai.jpg",
+        "type": "TV",
+        "score": "7.13",
+        "status": "Ongoing",
+        "animeId": "mizu-zokusei-no-mahoutsukai",
+        "href": "/samehadaku/anime/mizu-zokusei-no-mahoutsukai",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/mizu-zokusei-no-mahoutsukai/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Isekai",
+            "genreId": "isekai",
+            "href": "/samehadaku/genres/isekai",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/isekai/"
+          },
+          {
+            "title": "Reincarnation",
+            "genreId": "reincarnation",
+            "href": "/samehadaku/genres/reincarnation",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/reincarnation/"
+          }
+        ]
+      },
+      {
+        "title": "Onmyou Kaiten ReBirth",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Onmyou-Kaiten-ReBirth.jpg",
+        "type": "TV",
+        "score": "6.71",
+        "status": "Completed",
+        "animeId": "onmyou-kaiten-rebirth",
+        "href": "/samehadaku/anime/onmyou-kaiten-rebirth",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/onmyou-kaiten-rebirth/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Isekai",
+            "genreId": "isekai",
+            "href": "/samehadaku/genres/isekai",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/isekai/"
+          }
+        ]
+      },
+      {
+        "title": "Clevatess",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Clevatess.jpg",
+        "type": "TV",
+        "score": "7.89",
+        "status": "Completed",
+        "animeId": "clevatess",
+        "href": "/samehadaku/anime/clevatess",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/clevatess/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "Sentai Daishikkaku S2",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/bx178781-pbk5FgfiAJxS.jpg",
+        "type": "TV",
+        "score": "7.65",
+        "status": "Completed",
+        "animeId": "sentai-daishikkaku-s2",
+        "href": "/samehadaku/anime/sentai-daishikkaku-s2",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/sentai-daishikkaku-s2/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+          },
+          {
+            "title": "Shounen",
+            "genreId": "shounen",
+            "href": "/samehadaku/genres/shounen",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/shounen/"
+          },
+          {
+            "title": "Urban Fantasy",
+            "genreId": "urban-fantasy",
+            "href": "/samehadaku/genres/urban-fantasy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/urban-fantasy/"
+          }
+        ]
+      },
+      {
+        "title": "Teogonia",
+        "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/Teogonia.jpg",
+        "type": "TV",
+        "score": "6.95",
+        "status": "Completed",
+        "animeId": "teogonia",
+        "href": "/samehadaku/anime/teogonia",
+        "samehadakuUrl": "https://v1.samehadaku.how/anime/teogonia/",
+        "genreList": [
+          {
+            "title": "Action",
+            "genreId": "action",
+            "href": "/samehadaku/genres/action",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+          },
+          {
+            "title": "Adventure",
+            "genreId": "adventure",
+            "href": "/samehadaku/genres/adventure",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+          },
+          {
+            "title": "Fantasy",
+            "genreId": "fantasy",
+            "href": "/samehadaku/genres/fantasy",
+            "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+          }
+        ]
+      }
+    ]
+  },
+  "pagination": {
+    "currentPage": 1,
+    "hasPrevPage": false,
+    "prevPage": null,
+    "hasNextPage": true,
+    "nextPage": 2,
+    "totalPages": 23
+  }
+}

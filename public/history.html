@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="all">
+    <title>Riwayat Tontonan - HUASTREAM</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/Yudzxml/UploaderV2/main/tmp/26250dc9.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#2563eb" />
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("../service-worker.js")
+      }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/bottom-nav.css">
+    <style>
+        :root{ --bg:#f6f8fb; --surface: rgba(255,255,255,0.85); --text:#0f1724; --muted:#6b7280; --accent1:#2563eb; --accent2:#7c3aed; }
+        body{ background: linear-gradient(180deg,#fbfdff 0%, #eef6ff 40%, var(--bg) 100%); color:var(--text); font-family:'Poppins', 'Inter', system-ui, sans-serif; }
+        .container{ max-width:1200px; margin:0 auto; padding:0 1rem; }
+        header{ position:sticky; top:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.65rem 0; backdrop-filter: blur(8px) saturate(120%); background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.55)); border-bottom: 1px solid rgba(15,23,42,0.04); }
+        header h1{ display:flex; align-items:center; gap:.6rem; margin:0; font-weight:800; font-size:1.25rem; background: linear-gradient(90deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        main { padding-bottom: 80px; }
+        #historyContainer { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.5rem; }
+        @media (min-width: 640px) { #historyContainer { grid-template-columns: repeat(3, 1fr); } }
+        @media (min-width: 768px) { #historyContainer { grid-template-columns: repeat(4, 1fr); } }
+        @media (min-width: 1024px) { #historyContainer { grid-template-columns: repeat(5, 1fr); } }
+        .anime-card { background: var(--surface); border-radius: 1rem; overflow: hidden; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 6px 18px rgba(2,6,23,0.06); display: flex; flex-direction: column; position: relative; }
+        .anime-card:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 28px rgba(37,99,235,0.12); }
+        .anime-card img { width: 100%; height: 160px; object-fit: cover; display: block; }
+        .anime-card .p-2 {
+            padding: 0.5rem;
+        }
+        .anime-card h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 0.25rem;
+        }
+        .anime-card p {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+        .remove-history-btn { position: absolute; top: 0.5rem; right: 0.5rem; background-color: rgba(239, 68, 68, 0.8); color: white; border: none; border-radius: 50%; width: 2rem; height: 2rem; font-size: 1rem; line-height: 2rem; text-align: center; cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+        .anime-card:hover .remove-history-btn { opacity: 1; }
+
+        .rekom-text { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; background: linear-gradient(90deg, var(--accent1), var(--accent2)); color: white; font-size: 1rem; font-weight: 600; text-align: center; margin: 0 auto; }
+        .rekom-text-container { display: flex; justify-content: center; align-items: center; margin-top: 1.5rem; }
+        #empty-message { text-align: center; margin-top: 2rem; color: var(--muted); }
+
+        /* TOAST CSS */
+        #toast {
+            position: fixed;
+            top: 20px; /* Adjusted to top for better visibility */
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px) scale(0.95); 
+            min-width: 220px;
+            max-width: 300px;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            font-family: 'Inter','Poppins',sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            backdrop-filter: blur(6px) saturate(120%);
+            background: var(--surface);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(.2,.8,.2,1);
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        #toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0) scale(1);
+            pointer-events: auto;
+        }
+        #toast.success { background: linear-gradient(90deg, #10b981, #3b82f6); }
+        #toast.error { background: linear-gradient(90deg, #ef4444, #f87171); }
+        #toast i { margin-right: 0.5rem; font-size: 1.1rem; }
+
+        @media (max-width:640px){
+            #toast {
+                left: 50%;
+                right: auto;
+                min-width: auto;
+            }
+        }
+    </style>
+    <style>
+/* =======================
+   SKELETON LOADER for History
+======================= */
+.skeleton {
+  background-color: #e0e0e0;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-card {
+  background: var(--surface);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+}
+
+.skeleton-card .skeleton-img {
+  width: 100%;
+  height: 160px;
+}
+
+.skeleton-card .skeleton-title {
+  height: 1.1rem;
+  width: 80%;
+  margin: 1rem auto 0.5rem;
+}
+
+.skeleton-card .skeleton-text {
+  height: 0.8rem;
+  width: 60%;
+  margin: 0 auto 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .skeleton {
+    background: linear-gradient(90deg, #444 25%, #333 50%, #444 75%);
+    background-size: 200% 100%;
+  }
+  .skeleton-card {
+    background: var(--surface);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+}
+    </style>
+<style id="dark-theme-override">
+  :root{
+    --bg:#071025;
+    --surface: rgba(10,14,20,0.55);
+    --text:#e6eef8;
+    --muted:#9ca3af;
+    --accent1: #8B0000; /* Darker Red */
+    --accent2: #DC143C; /* Crimson */
+  }
+  body{
+    background: linear-gradient(180deg,#041226 0%, #071025 60%);
+    color:var(--text);
+  }
+  header{
+    background: linear-gradient(180deg, rgba(8,10,15,0.6), rgba(6,8,12,0.55));
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  header h1{
+    -webkit-text-fill-color: var(--accent1);
+  }
+  .anime-card {
+    background: var(--surface);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+  .anime-card:hover {
+    box-shadow: 0 12px 28px rgba(37,99,235,0.25);
+  }
+  .anime-card h3 {
+    color: var(--text);
+  }
+  .rekom-text {
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    color: white;
+  }
+  #empty-message {
+    color: var(--muted);
+  }
+  #toast {
+    background: var(--surface);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    backdrop-filter: blur(6px) saturate(120%);
+  }
+  #toast.success {
+    background: linear-gradient(90deg, #10b981, #3b82f6); /* Keep original success colors */
+  }
+  #toast.error {
+    background: linear-gradient(90deg, var(--accent1), var(--accent2)); /* Use dark red accents for error */
+  }
+  .dark .text-gray-900 {
+    color: var(--text);
+  }
+  .dark .text-gray-500 {
+    color: var(--muted);
+  }
+  .anime-card .title-overlay p {
+    color: #93c5fd !important; /* Dark light blue */
+    margin-top: 0.5rem !important;
+  }
+</style>
+</head>
+<body class="text-gray-900 dark">
+
+<div id="toast"></div>
+
+<main class="container">
+    <div class="rekom-text-container flex justify-between items-center">
+        <h2 class="rekom-text"><i class="fas fa-history mr-2"></i>Riwayat Tontonan</h2>
+        <button id="clearHistoryBtn" class="page-btn">
+            <i class="fas fa-trash-alt mr-1"></i> Clear All
+        </button>
+    </div>
+
+    <div id="historyContainer">
+        <!-- History items will be injected here -->
+    </div>
+    <p id="empty-message" class="text-center mt-8 text-gray-500" style="display: none;">Anda belum memiliki riwayat tontonan.</p>
+</main>
+
+<nav class="bottom-nav">
+    <a href="home.html" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="search.html" class="nav-link"><i class="fas fa-search"></i><span>Cari</span></a>
+    <a href="list.html" class="nav-link"><i class="fas fa-list"></i><span>Daftar</span></a>
+    <a href="jadwal.html" class="nav-link"><i class="fas fa-film"></i><span>Movies</span></a>
+    <a href="history.html" class="nav-link active"><i class="fas fa-history"></i><span>Riwayat</span></a>
+    <a href="profil.html" class="nav-link"><i class="fas fa-user"></i><span>Akun</span></a>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="module" src="assets/history-logic.js?v=1.1"></script>
+</body>
+</html>

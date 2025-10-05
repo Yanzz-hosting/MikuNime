@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="all">
+    <title>HUASTREAM | Nonton Donghua & Anime Bahasa Indonesia</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/Yudzxml/UploaderV2/main/tmp/26250dc9.png">
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#2563eb" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.comment-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Skeleton Loader for Title */
+.skeleton-text-loader {
+  background-color: #e0e0e0; /* Light gray for skeleton */
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 0.25rem;
+  height: 1.5em; /* Adjust height to match title font size */
+  width: 70%; /* Adjust width as needed */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+body.dark-theme .skeleton-text-loader {
+  background: linear-gradient(90deg, #444 25%, #333 50%, #444 75%);
+}
+
+:root{
+  /* Light theme variables (default) */
+  --bg:#f6f8fb;
+  --surface: rgba(255,255,255,0.85);
+  --text:#0f1724;
+  --muted:#6b7280;
+  --accent1:#2563eb;
+  --accent2:#7c3aed;
+  --header-bg: linear-gradient(180deg, rgba(255,255,255,1), rgba(255,255,255,1));
+  --header-border: 1px solid rgba(15,23,42,0.04);
+
+  /* Dark theme variables (overridden by .dark-theme) */
+  --dark-bg:#071025;
+  --dark-surface: #0a0e14;
+  --dark-text:#e6eef8;
+  --dark-muted:#9ca3af;
+  --dark-header-bg: var(--dark-bg);
+  --dark-header-border: 1px solid rgba(255,255,255,0.03);
+}
+
+body.dark-theme{
+  --bg: var(--dark-bg);
+  --surface: var(--dark-surface);
+  --text: var(--dark-text);
+  --muted: var(--dark-muted);
+  --accent1:#2563eb;
+  --accent2:#7c3aed;
+  --header-bg: var(--dark-header-bg);
+  --header-border: var(--dark-header-border);
+  #comments-header { border-bottom-color: rgba(255,255,255,0.1); }
+  #comment-form-container textarea { color: var(--dark-text); }
+}
+
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  position: relative; /* Added for absolute positioning context */
+  font-family:'Poppins', 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-osx-font-smoothing:grayscale;
+}
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 1rem;
+}
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height: 50px; /* Added fixed height */
+  z-index:70; /* Higher than video-player-card */
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.65rem 1rem;
+  background: var(--header-bg);
+  border-bottom: var(--header-border);
+}
+main {
+  flex: 1;
+  padding: 1rem;
+  padding-bottom: 100px; /* Increased to account for bottom nav */
+  margin-top: calc(100vw * 9 / 16); /* Height of fixed 16:9 video player */
+  background-color: var(--bg);
+}
+
+/* === Video Player Card === */
+#video-player-card {
+    background: var(--surface);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-radius: 0; /* Keep sharp corners */
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vw * 9 / 16); /* 16:9 Aspect Ratio */
+    z-index: 10;
+}
+
+#video-player-card .video-container {
+    border-radius: 0; /* Keep sharp corners */
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+#video-player-card .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#video-controls {
+    padding: 1rem 0; /* Remove horizontal padding, container handles it */
+}
+#video-controls #episode-title { font-size: 1.5rem; font-weight: 700; color: var(--text); margin: 0 0 0 0; text-align: left; display: flex; align-items: center; min-height: 1.5em; }
+.controls-bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.episode-nav { display: flex; gap: 0.5rem; }
+.nav-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; border: none; border-radius: 9999px; background: rgba(15,23,42,0.05); color: var(--text); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.2s ease; }
+.nav-btn:not(:disabled):hover { background: var(--accent1); color: #fff; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(37,99,235,0.2); }
+.nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.server-selector { display: flex; align-items: center; gap: 0.5rem; }
+.server-selector label { font-weight: 600; font-size: 0.9rem; }
+.server-selector select { padding: 10px; font-size: 16px; border-radius: 9999px; border: 1px solid rgba(15,23,42,0.05); background: var(--surface); color: var(--text); }
+
+/* === Comment Section === */
+#comments-section { margin-top: 0; }
+#comments-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(15,23,42,0.1); }
+#comments-header h2 { font-size: 1.25rem; font-weight: 700; margin: 0; color: var(--text); }
+#comments-header span { font-size: 1rem; font-weight: 600; color: var(--muted); }
+#comment-form-container { display: flex; align-items: flex-start; gap: 0.75rem; }
+#comment-form-container img { width: 40px; height: 40px; border-radius: 50%; }
+#comment-form-container .form-content { width: 100%; }
+#comment-form-container textarea { width: 100%; background: var(--surface); border: 1px solid rgba(15,23,42,0.1); border-radius: 0.75rem; padding: 0.75rem 1rem; font-size: 0.95rem; transition: all 0.2s ease; margin-bottom: 0.5rem; }
+#comment-form-container textarea:focus { border-color: var(--accent1); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+#comment-form-container button { background: linear-gradient(90deg, var(--accent1), var(--accent2)); font-size: 0.9rem; font-weight: 600; padding: 0.5rem 1.25rem; border-radius: 9999px; float: right; transition: all 0.2s ease; color: #fff; border: none; cursor: pointer; }
+#comment-form-container button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37,99,235,0.2); }
+.login-link { color: var(--accent1); font-weight: 600; text-decoration: none; }
+.login-link:hover { text-decoration: underline; }
+#comments-list { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+#comments-list .comment { display: flex; align-items: flex-start; gap: 0.75rem; }
+#comments-list .comment img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+#comments-list .comment .comment-body { width: 100%; flex-shrink: 1; min-width: 0; }
+#comments-list .comment .comment-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem; }
+#comments-list .comment .username { font-weight: 700; font-size: 0.9rem; color: var(--text); }
+#comments-list .comment .timestamp { font-size: 0.75rem; color: var(--muted); }
+#comments-list .comment .comment-text { font-size: 0.95rem; line-height: 1.6; color: var(--text); margin-bottom: 0.5rem; overflow-wrap: break-word; }
+#comments-list .comment .comment-actions { display: flex; align-items: center; gap: 1rem; }
+#comments-list .comment .action-btn { display: flex; align-items: center; gap: 0.3rem; font-size: 0.8rem; font-weight: 600; color: var(--muted); cursor: pointer; transition: color 0.2s ease; }
+#comments-list .comment .action-btn:hover { color: var(--accent1); }
+
+.comment-level-badge {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  box-shadow: 0 2px 8px rgba(var(--accent1-rgb), 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comment-level-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(var(--accent1-rgb), 0.25);
+}
+
+/* === Bottom Nav === */
+.bottom-nav{ position:fixed;bottom:0;left:0;right:0; display:flex;justify-content:space-around; background:var(--surface);backdrop-filter:blur(12px) saturate(120%); border-top:1px solid rgba(15,23,42,0.05); padding:0.5rem 0; z-index:60; box-shadow:0 -2px 8px rgba(0,0,0,0.05); }
+.bottom-nav .nav-link{ display:flex;flex-direction:column;align-items:center;gap:0.2rem; color:var(--muted); font-size:0.7rem; text-decoration:none; transition: all 0.2s ease; position:relative; }
+.bottom-nav .nav-link i{ font-size:1.2rem; transition: all 0.2s ease; background: linear-gradient(90deg,var(--accent1),var(--accent2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.bottom-nav .nav-link.active i, .bottom-nav .nav-link:hover i{ transform:translateY(-2px) scale(1.1); filter: drop-shadow(0 2px 4px rgba(37,99,235,0.4)); }
+.bottom-nav .nav-link.active span, .bottom-nav .nav-link:hover span{ color:var(--accent1); font-weight:600; }
+@media(prefers-color-scheme:dark){
+  .bottom-nav{background:var(--surface); border-top:1px solid rgba(255,255,255,0.05); box-shadow:0 -2px 8px rgba(0,0,0,0.2);}
+  .bottom-nav .nav-link{color:var(--muted);}
+  .bottom-nav .nav-link.active span,.bottom-nav .nav-link:hover span{color:var(--accent1);}
+}
+@media(max-width:480px){.bottom-nav .nav-link span{font-size:0.65rem;} .bottom-nav .nav-link i{font-size:1.1rem;}}
+</style>
+</head>
+<body class="dark-theme">
+
+    <div id="video-player-card">
+        <div class="video-container"></div>
+    </div>
+<main class="">
+    <div class="container">
+        <div id="video-controls">
+            <h1 id="episode-title"></h1>
+            <div class="controls-bar">
+                <div class="episode-nav">
+                    <button id="prev-episode" class="nav-btn" disabled><i class="fas fa-chevron-left"></i> Prev</button>
+                    <button id="next-episode" class="nav-btn" disabled>Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="server-selector">
+                    <!-- Server options will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="comments-section">
+            <div id="comments-header">
+                <h2>Comments</h2>
+                <span id="comments-count"></span>
+            </div>
+            <div id="comment-form-container"></div>
+            <div id="comments-list"></div>
+        </div>
+    </div>
+
+<footer class="footer">
+  <div class="container">
+
+
+
+  </div>
+</footer>
+
+
+<script type="module">
+    import { auth, db } from './assets/firebase.js';
+    import { collection, addDoc, query, orderBy, onSnapshot, serverTimestamp, where, doc, getDoc, getDocs, runTransaction, increment, setDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+    import { onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+
+    const API_BASE_URL = 'https://apis.yanzkageno.biz.id/api'; // New API base URL
+
+    const videoContainer = document.querySelector('#video-player-card .video-container');
+    const episodeTitleElement = document.getElementById('episode-title');
+    const prevEpisodeBtn = document.getElementById('prev-episode');
+    const nextEpisodeBtn = document.getElementById('next-episode');
+    const serverSelectorDiv = document.querySelector('.server-selector');
+    
+    let currentUser = null;
+    let currentEpisodeSlug = null;
+    let episodeData = null; 
+
+    // --- LEVELING SYSTEM & HELPERS ---
+    let watchTimeInterval = null;
+    const MAX_LEVEL = 90000;
+    const EXP_PER_MINUTE = 12.5;
+
+    function getUrlParams() {
+        return new URLSearchParams(window.location.search);
+    }
+
+    function loadVideo(videoUrl) { // Removed useSandbox parameter
+        if (videoUrl) {
+            // Removed sandboxAttribute
+            videoContainer.innerHTML = `<iframe src="${videoUrl}" frameborder="0" allowfullscreen></iframe>`;
+        } else {
+            videoContainer.innerHTML = '<p class="text-red-500 text-center">Gagal memuat URL video.</p>';
+        }
+    }
+
+async function initializePlayer() {
+        const params = getUrlParams();
+        currentEpisodeSlug = params.get('slug'); 
+
+        episodeTitleElement.innerHTML = '<span class="skeleton-text-loader"></span>';
+        videoContainer.innerHTML = '';
+        // Hide prev/next buttons as they are no longer supported
+        prevEpisodeBtn.style.display = 'none';
+        nextEpisodeBtn.style.display = 'none';
+        if (serverSelectorDiv) serverSelectorDiv.innerHTML = ''; 
+
+        if (!currentEpisodeSlug) {
+            episodeTitleElement.textContent = 'Episode tidak ditemukan.';
+            return;
+        }
+
+        try {
+            // Use the new API endpoint
+            const response = await axios.get(`${API_BASE_URL}/animeindo/stream/${currentEpisodeSlug}`);
+            const data = response.data;
+
+            // Log the received data for debugging
+            console.log("Server data received:", data);
+
+            // The API returns an ARRAY of servers, not an object.
+            if (!data || !Array.isArray(data.servers) || data.servers.length === 0) {
+                throw new Error('Array "servers" tidak ditemukan atau kosong di respons API.');
+            }
+
+            // Populate server selector from the 'servers' array
+            if (serverSelectorDiv) {
+                const selectElement = document.createElement('select');
+                selectElement.id = 'server-quality-selector';
+                selectElement.className = 'server-selector-select';
+                
+                // Iterate over the array directly
+                data.servers.forEach((server, index) => {
+                    // Use the correct property names: server_name and video_url
+                    const serverName = server.server_name;
+                    const serverUrl = server.video_url;
+
+                    if (serverName && serverUrl) {
+                        const option = document.createElement('option');
+                        option.value = serverUrl;
+                        option.textContent = serverName;
+                        if (index === 0) option.selected = true;
+                        selectElement.appendChild(option);
+                    }
+                });
+
+                if (selectElement.options.length > 0) {
+                    serverSelectorDiv.innerHTML = '';
+                    serverSelectorDiv.appendChild(selectElement);
+                    loadVideo(selectElement.value);
+                    selectElement.addEventListener('change', (event) => {
+                        loadVideo(event.target.value);
+                    });
+                } else {
+                    throw new Error('Tidak ada server video yang valid ditemukan dari array.');
+                }
+
+            } else {
+                 // Fallback for no selector div
+                const firstServer = data.servers[0];
+                if (firstServer && firstServer.video_url) {
+                    loadVideo(firstServer.video_url);
+                } else {
+                    throw new Error('Server video pertama tidak memiliki URL yang valid.');
+                }
+            }
+
+            episodeTitleElement.textContent = data.title || 'Judul Episode Tidak Tersedia';
+
+            // Since prev/next is not available, we can't get the anime slug easily.
+            // We will pass the episode slug to the comments for now.
+            initializeComments(currentEpisodeSlug, currentEpisodeSlug);
+
+        } catch (err) {
+            console.error("❌ Gagal memuat episode:", err);
+            let errorMessage = 'Gagal memuat sumber video. Coba lagi nanti.';
+            if (err.response) {
+                errorMessage = `Gagal memuat: Server merespons dengan status ${err.response.status}.`;
+                if (err.response.status === 429) {
+                    errorMessage += ' Terlalu banyak permintaan, silakan coba lagi setelah beberapa saat.';
+                } else if (err.response.status === 404) {
+                    errorMessage += ' Episode tidak ditemukan di server.';
+                }
+            } else if (err.request) {
+                errorMessage = 'Gagal memuat: Tidak ada respons dari server. Periksa koneksi internet Anda.';
+            } else {
+                errorMessage = `Gagal memuat: ${err.message}`;
+            }
+            episodeTitleElement.textContent = 'Gagal Memuat Episode';
+            videoContainer.innerHTML = `<p class="text-red-500 text-center">${errorMessage}<br>Silakan periksa console (F12) untuk detail teknis.</p>`;
+            stopWatchTimeTracker();
+        }
+    }
+
+    async function updateWatchProgress() {
+        if (!currentUser) return;
+        console.log("Updating watch progress for user...", currentUser.uid);
+
+        const userDocRef = doc(db, "users", currentUser.uid);
+
+        try {
+            await runTransaction(db, async (transaction) => {
+                const userDoc = await transaction.get(userDocRef);
+                if (!userDoc.exists()) {
+                    throw "User document does not exist!";
+                }
+
+                let currentLevel = userDoc.data().level || 1;
+                let currentExp = userDoc.data().exp || 0;
+
+                if (currentLevel >= MAX_LEVEL) {
+                    console.log("User is at max level. No more EXP gain.");
+                    stopWatchTimeTracker(); // Stop the timer if max level is reached
+                    return;
+                }
+
+                let newExp = currentExp + EXP_PER_MINUTE;
+                let newLevel = currentLevel;
+
+                if (newExp >= 100) {
+                    newLevel = currentLevel + 1;
+                    newExp = newExp - 100; // Carry over remaining exp
+                    console.log(`User ${currentUser.uid} leveled up to ${newLevel}!`);
+                }
+                
+                transaction.update(userDocRef, { level: newLevel, exp: newExp });
+            });
+        } catch (error) {
+            console.error("Watch progress transaction failed: ", error);
+        }
+    }
+
+    function startWatchTimeTracker() {
+        if (watchTimeInterval) clearInterval(watchTimeInterval);
+        if (!currentUser) {
+            console.log("Cannot start watch tracker: no user logged in.");
+            return;
+        }
+
+        console.log("Starting watch progress tracker for user:", currentUser.uid);
+        watchTimeInterval = setInterval(updateWatchProgress, 60000); // 1 minute
+    }
+
+    function stopWatchTimeTracker() {
+        if (watchTimeInterval) {
+            clearInterval(watchTimeInterval);
+            watchTimeInterval = null;
+            console.log("Watch progress tracker stopped.");
+        }
+    }
+
+    function formatTimeAgo(timestamp) {
+        if (!timestamp || !timestamp.seconds) return '';
+        const now = new Date();
+        const commentDate = timestamp.toDate();
+        const seconds = Math.floor((now - commentDate) / 1000);
+        let interval = seconds / 31536000;
+        if (interval > 1) return Math.floor(interval) + " tahun yang lalu";
+        interval = seconds / 2592000;
+        if (interval > 1) return Math.floor(interval) + " bulan yang lalu";
+        interval = seconds / 86400;
+        if (interval > 1) return Math.floor(interval) + " hari yang lalu";
+        interval = seconds / 3600;
+        if (interval > 1) return Math.floor(interval) + " jam yang lalu";
+        interval = seconds / 60;
+        if (interval > 1) return Math.floor(interval) + " menit yang lalu";
+        return "beberapa saat yang lalu";
+    }
+
+    async function initializeComments(episodeSlug, animeSlug) {
+        const commentsList = document.getElementById('comments-list');
+        const commentFormContainer = document.getElementById('comment-form-container');
+        const commentsCountElement = document.getElementById('comments-count');
+        if (!episodeSlug) return;
+
+        const q = query(collection(db, "comments"), where("episodeId", "==", episodeSlug), orderBy("timestamp", "desc"));
+
+        onSnapshot(q, async (snapshot) => {
+            commentsCountElement.textContent = `(${snapshot.size})`;
+            commentsList.innerHTML = '';
+            if (snapshot.empty) {
+                commentsList.innerHTML = '<p class="text-center text-muted">Belum ada komentar.</p>';
+                return;
+            }
+
+            const comments = snapshot.docs.map(doc => doc.data());
+            const authorIds = [...new Set(comments.map(comment => comment.authorId).filter(id => id))];
+
+            const usersData = new Map();
+            if (authorIds.length > 0) {
+                const MAX_IN_QUERIES = 10;
+                const batches = [];
+                for (let i = 0; i < authorIds.length; i += MAX_IN_QUERIES) {
+                    batches.push(authorIds.slice(i, i + MAX_IN_QUERIES));
+                }
+
+                try {
+                    const userPromises = batches.map(batch => 
+                        getDocs(query(collection(db, "users"), where("__name__", "in", batch)))
+                    );
+                    const userSnapshots = await Promise.all(userPromises);
+                    userSnapshots.forEach(userSnapshot => {
+                        userSnapshot.forEach(userDoc => {
+                            usersData.set(userDoc.id, userDoc.data());
+                        });
+                    });
+                } catch (e) {
+                    console.error("❌ Gagal memuat data user secara batch:", e);
+                }
+            }
+
+            comments.forEach(comment => {
+                const commentElement = document.createElement('div');
+                commentElement.className = 'comment comment-fade-in';
+                
+                const userData = usersData.get(comment.authorId);
+                const userLevel = userData?.level || 1;
+                const userName = userData?.displayName || 'Pengguna Telah Dihapus';
+                const userPhoto = userData?.photoURL || 'https://via.placeholder.com/40';
+                const timeAgo = comment.timestamp ? formatTimeAgo(comment.timestamp) : '';
+
+                commentElement.innerHTML = `
+                    <img src="${userPhoto}" alt="User Avatar" class="w-10 h-10 rounded-full object-cover">
+                    <div class="comment-body">
+                        <div class="comment-header">
+                            <span class="username">${userName}</span>
+                            <span class="comment-level-badge">Lv. ${userLevel}</span>
+                        </div>
+                        <p class="comment-text">${comment.text}</p>
+                        <div class="comment-actions">
+                           <span class="timestamp">${timeAgo}</span>
+                        </div>
+                    </div>`;
+                commentsList.appendChild(commentElement);
+            });
+        });
+
+        renderCommentForm(episodeSlug, animeSlug);
+    }
+
+    function renderCommentForm(episodeSlug, animeSlug) {
+        const commentFormContainer = document.getElementById('comment-form-container');
+        if (currentUser) {
+            commentFormContainer.innerHTML = `
+                <img src="${currentUser.photoURL || 'https://via.placeholder.com/40'}" alt="User Avatar" class="w-10 h-10 rounded-full">
+                <div class="form-content relative w-full">
+                    <textarea id="comment-textarea" placeholder="Tulis komentar Anda..." class="w-full h-24 p-2 pr-12 border rounded-md"></textarea>
+                    <button id="submit-comment-btn" class="absolute bottom-3 right-3 text-blue-500 hover:text-blue-700"><i class="fas fa-paper-plane text-xl"></i></button>
+                </div>
+            `;
+            document.getElementById('submit-comment-btn').addEventListener('click', () => submitComment(episodeSlug, animeSlug));
+        } else {
+            commentFormContainer.innerHTML = `<p>Anda harus <a href="#" id="login-link" class="login-link">login</a> untuk berkomentar.</p>`;
+            document.getElementById('login-link').addEventListener('click', (e) => { e.preventDefault(); signInWithGoogle(); });
+        }
+    }
+
+    async function submitComment(episodeSlug, animeSlug) {
+        const commentTextarea = document.getElementById('comment-textarea');
+        const commentText = commentTextarea.value.trim();
+        if (!commentText || !currentUser) return;
+        try {
+            // Hanya simpan ID, bukan data profil duplikat
+            await addDoc(collection(db, `comments`), {
+                animeId: animeSlug,
+                episodeId: episodeSlug,
+                authorId: currentUser.uid,
+                text: commentText,
+                timestamp: serverTimestamp()
+            });
+            commentTextarea.value = '';
+        } catch (error) {
+            console.error('Error adding comment:', error);
+        }
+    }
+
+    const provider = new GoogleAuthProvider();
+    function signInWithGoogle() {
+        signInWithPopup(auth, provider).catch(error => console.error('Google Sign-In Error:', error));
+    }
+
+    onAuthStateChanged(auth, (user) => {
+        currentUser = user;
+        if (user) {
+            const userDocRef = doc(db, 'users', user.uid);
+            getDoc(userDocRef).then(docSnap => {
+                if (!docSnap.exists() || !docSnap.data().hasOwnProperty('level') || !docSnap.data().hasOwnProperty('exp')) {
+                    // Gunakan displayName dan photoURL untuk konsistensi
+                    setDoc(userDocRef, { 
+                        level: 1,
+                        exp: 0,
+                        displayName: user.displayName,
+                        email: user.email,
+                        photoURL: user.photoURL,
+                        lastActivity: serverTimestamp(),
+                        role: 'User'
+                    }, { merge: true });
+                }
+            });
+            startWatchTimeTracker(); // Start tracker when user is logged in
+            initializePlayer();
+        } else {
+            stopWatchTimeTracker();
+            initializePlayer();
+        }
+    });
+
+</script>
+    <script type="module" src="./assets/history-logic.js"></script>
+    <script type="module">
+      import { initializePresence } from './assets/presence.js';
+      // Delay to ensure the main script sets the document title first
+      setTimeout(() => {
+          initializePresence(`Nonton: ${document.title}`);
+      }, 2000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="all">
+    <title>HUASTREAM | Nonton Donghua & Anime Bahasa Indonesia</title>
+    <meta name="description" content="HUASTREAM.YYDZ adalah tempat nonton donghua dan anime online terlengkap dengan subtitle Indonesia. Mulai dari Action, Fantasy, Romance, Isekai, Comedy, hingga Cultivation dan Martial Arts, semua bisa kamu tonton gratis dengan kualitas terbaik. Koleksi lengkap donghua terbaru dan anime populer tersedia di HUASTREAM.YYDZ untuk pengalaman menonton seru tanpa batas.">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="HUASTREAM.YYDZ" />
+    <meta property="og:title" content="HUASTREAM | Nonton Donghua & Anime Bahasa Indonesia" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/Yudzxml/UploaderV2/main/tmp/55337a9f.png" />
+   <meta property="og:description" content="HUASTREAM.YYDZ adalah platform nonton donghua dan anime terbaru dengan subtitle Indonesia. Koleksi lengkap dari Action, Fantasy, Isekai, Romance, hingga Cultivation bisa kamu tonton gratis!" />
+   <meta property="og:url" content="https://huastream.yydz.my.id" />
+   <meta name="keywords" content="nonton donghua, nonton anime, donghua sub indo, anime sub indo, streaming anime, streaming donghua, anime terbaru, donghua terbaru, huastream" itemprop="keywords" />
+   <meta content="Nonton anime dan donghua sub indo terbaru hari ini dengan kualitas terbaik hanya di HUASTREAM.YYDZ." itemprop="headline" />
+    <meta name="thumbnailUrl" content="https://raw.githubusercontent.com/Yudzxml/UploaderV2/main/tmp/55337a9f.png" itemprop="thumbnailUrl" />
+    <meta content="https://huastream.yydz.my.id" itemprop="url" />
+    <link rel="canonical" href="https://huastream.yydz.my.id" />
+    <link rel="icon" href="https://raw.githubusercontent.com/Yudzxml/UploaderV2/main/tmp/26250dc9.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#2563eb" />
+     <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("../service-worker.js")
+     }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/bottom-nav.css">
+  
+<style>
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+:root{
+  --bg:#f6f8fb;
+  --surface: rgba(255,255,255,0.85);
+  --text:#0f1724;
+  --muted:#6b7280;
+  --accent1:#2563eb;
+  --accent2:#7c3aed;
+  --glass: rgba(255,255,255,0.6);
+}
+
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family:'Poppins', 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#fbfdff 0%, #eef6ff 40%, var(--bg) 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 1rem;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:60;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.65rem 0;
+  /* backdrop-filter: blur(8px) saturate(120%); */ /* Removed for performance */
+  background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.55));
+  border-bottom: 1px solid rgba(15,23,42,0.04);
+  transition: box-shadow .22s ease, transform .18s ease;
+}
+
+header.elev{ box-shadow: 0 8px 30px rgba(15,23,42,0.06); transform: translateY(-1px); }
+
+header h1{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  margin:0;
+  font-weight:800;
+  font-size:1.25rem;
+  letter-spacing:-0.2px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  background-clip: text; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#searchForm{
+  display:flex;
+  align-items:center;
+  gap:.3rem;
+  padding:3px 6px;
+  border-radius:9999px;
+  background: var(--surface);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+  border: 1px solid rgba(15,23,42,0.05);
+  transition: box-shadow .18s ease, transform .18s ease;
+  max-width: 260px; 
+}
+
+#searchForm:focus-within{
+  box-shadow: 0 10px 28px rgba(37,99,235,0.08);
+  transform: translateY(-1.5px);
+  border-color: rgba(99,102,241,0.12);
+}
+
+#searchInput{
+  background: transparent;
+  border: none;
+  padding:.4rem .6rem;
+  width: 100%;
+  max-width: 180px;
+  font: 500 .9rem/1.2 'Inter', system-ui, sans-serif;
+  color: #eee
+  caret-color: var(--accent1);
+  outline: none;
+}
+
+#searchBtn{
+  display:inline-flex;
+  align-items:center;
+  gap:.3rem;
+  border:none;
+  padding:.4rem .7rem;
+  border-radius:9999px;
+  font-weight:600;
+  font-size:.85rem;
+  color:#fff;
+  background: linear-gradient(90deg,var(--accent1),var(--accent2));
+  cursor:pointer;
+  box-shadow: 0 8px 20px rgba(37,99,235,0.1);
+  transition: transform .14s cubic-bezier(.2,.8,.2,1), box-shadow .14s ease;
+}
+
+#searchBtn:hover{ transform: translateY(-2px); box-shadow: 0 14px 28px rgba(37,99,235,0.14); }
+#searchBtn:active{ transform: translateY(0); box-shadow: 0 6px 16px rgba(37,99,235,0.1); }
+
+@media (max-width:880px){
+  .container{ padding:0 .9rem; }
+  #searchForm{ max-width: 100%; }
+  #searchInput{ max-width: 100%; }
+}
+
+@media (max-width:640px){
+  header{ flex-direction:column; align-items:stretch; gap:.6rem; padding:.6rem 0; }
+  header h1{ justify-content:center; width:100%; }
+  #searchForm{ width:100%; max-width: 100%; } 
+  #searchInput{ flex:1; width:100%; }
+  #searchBtn{ padding:.5rem .7rem; font-size:.85rem; }
+}
+
+@media (prefers-color-scheme: dark){
+  :root{ --text:#e6eef8; --muted:#9ca3af; --bg:#071025; --surface: rgba(10,14,20,0.55); }
+  body{ background: linear-gradient(180deg,#041226 0%, #071025 60%); color:var(--text); }
+  header{ background: linear-gradient(180deg, rgba(8,10,15,0.6), rgba(6,8,12,0.55)); border-bottom: 1px solid rgba(255,255,255,0.03); }
+  #searchForm{ background: var(--surface); border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 10px 30px rgba(2,6,23,0.45); }
+  #searchInput{ color:var(--text); }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+main {
+  flex: 1;
+  padding: 1rem;
+}
+
+.footer {
+  background-color: var(--bg);
+  color: var(--text);
+  text-align: center;
+  padding: 1rem 0 0; 
+  border-radius: 1rem 1rem 0 0;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.footer .container {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.footer .container:active {
+  box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+  transform: translateY(-1px);
+}
+
+.footer .copyright {
+  font-size: 0.8rem;
+}
+.footer p {
+  margin: 0.5rem 0;
+}
+.footer .contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.3rem;
+}
+
+.footer .contact-icons a {
+  transition: transform 0.2s;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer .contact-icons a:active {
+  transform: scale(1.2);
+}
+
+.footer .team {
+  font-size: 0.75rem;
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  background-color: var(--bg);
+  z-index: -1;
+}
+
+.gradient-text {
+  transition: transform 0.2s;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: var(--surface, #0a0e14);
+    color: var(--text, #e6eef8);
+  }
+}
+</style>
+<style>
+/* =======================
+   SKELETON LOADER
+======================= */
+.skeleton {
+  background-color: #e0e0e0; /* Light gray for skeleton */
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+.skeleton-dark {
+  background-color: #333; /* Dark gray for skeleton in dark mode */
+  background: linear-gradient(90deg, #444 25%, #333 50%, #444 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-card {
+  background: var(--surface);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(15,23,42,0.08);
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.skeleton-card .skeleton-img {
+  width: 100%;
+  aspect-ratio: 1 / 1.4; /* Adjust aspect ratio to match anime cards */
+  object-fit: cover;
+  display: block;
+  border-radius: 0.5rem;
+}
+
+.skeleton-card .skeleton-title {
+  height: 1.2em;
+  margin: 0.5rem 0.25rem 0.25rem 0.25rem;
+  width: 80%;
+}
+
+.skeleton-card .skeleton-text {
+  height: 1em;
+  margin: 0.25rem;
+  width: 60%;
+}
+
+/* Specific skeleton for topAnime */
+.skeleton-top-anime-card {
+  flex: 0 0 auto;
+  width: 10rem;
+  background: var(--surface);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(15,23,42,0.08);
+  padding: 0.5rem;
+}
+.skeleton-top-anime-card .skeleton-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 0.5rem;
+}
+.skeleton-top-anime-card .skeleton-rank {
+  height: 1em;
+  width: 30%;
+  margin: 0.5rem 0.25rem;
+}
+.skeleton-top-anime-card .skeleton-title {
+  height: 1.2em;
+  width: 90%;
+  margin: 0.5rem auto 0.25rem auto;
+}
+.skeleton-top-anime-card .skeleton-score {
+  height: 1em;
+  width: 40%;
+  margin: 0.25rem auto 0.5rem auto;
+}
+
+
+/* Specific skeleton for latestAnime and scheduleAnime */
+.skeleton-latest-anime-card {
+  background: var(--surface);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+.skeleton-latest-anime-card .skeleton-img {
+  width: 100%;
+  height: 160px;
+  border-radius: 0.5rem;
+}
+.skeleton-latest-anime-card .skeleton-title {
+  height: 1.2em;
+  width: 90%;
+  margin: 0.5rem 0.25rem 0.25rem 0.25rem;
+}
+.skeleton-latest-anime-card .skeleton-text {
+  height: 1em;
+  width: 70%;
+  margin: 0.25rem;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .skeleton {
+    background: linear-gradient(90deg, #444 25%, #333 50%, #444 75%);
+    background-size: 200% 100%;
+  }
+}
+
+#topAnime {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+#topAnime::-webkit-scrollbar {
+  display: none;
+}
+#topAnime {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+#topAnime .anime-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background: var(--surface);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(15,23,42,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  width: 10rem;
+  cursor: pointer;
+  will-change: transform, box-shadow;
+}
+#topAnime .anime-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  z-index: 10;
+}
+#topAnime .anime-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid rgba(15,23,42,0.05);
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+#topAnime .anime-card:hover img {
+  transform: scale(1.08);
+  filter: brightness(0.9) blur(1px);
+}
+#topAnime .anime-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  border-radius: 1rem;
+}
+#topAnime .anime-card:hover::after {
+  opacity: 1;
+}
+#topAnime .anime-card span {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: var(--accent1);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+}
+#topAnime .anime-card h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0.5rem 0 0.2rem 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+#topAnime .anime-card p {
+  font-size: 0.75rem;
+  color: #facc15;
+  margin: 0 0 0.5rem 0;
+  text-align: center; /* tetap center */
+  display: flex;      /* flex container */
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  gap: 0.25rem;       /* jarak icon dan angka */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+#topAnime .anime-card:hover h3,
+#topAnime .anime-card:hover p {
+  transform: translateY(-3px);
+  color: var(--accent1);
+}
+@media (prefers-color-scheme: dark) {
+  #topAnime .anime-card {
+    background: rgba(10,14,20,0.6);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  #topAnime .anime-card span {
+    background: var(--accent2);
+    color: #fff;
+  }
+  #topAnime .anime-card h3 {
+    color: var(--text);
+  }
+}
+</style>
+<style>
+/* Container Latest Anime */
+#latestAnime,
+#moviesAnime,
+#completedAnime {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  #latestAnime,
+  #moviesAnime,
+  #completedAnime {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  #latestAnime,
+  #moviesAnime,
+  #completedAnime {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+#latestAnime .anime-card {
+  background: var(--surface);
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  display: flex;
+  flex-direction: column;
+  will-change: transform, box-shadow;
+}
+
+#latestAnime .anime-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(37,99,235,0.12);
+}
+
+#latestAnime .anime-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+#latestAnime .anime-card:hover img {
+  transform: scale(1.05);
+}
+
+#latestAnime .anime-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0.5rem 0 0.25rem 0;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#latestAnime .anime-card p {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0 0 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+#latestAnime .anime-card i {
+  color: var(--accent1);
+}
+
+@media (prefers-color-scheme: dark) {
+  #latestAnime .anime-card {
+    background: var(--surface);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+
+  #latestAnime .anime-card p {
+    color: var(--muted);
+  }
+
+  #latestAnime .anime-card i {
+    color: var(--accent2);
+  }
+}
+</style>
+<style>
+/* Tombol Prev / Next */
+#latestAnimeNav,
+#completedAnimeNav,
+#moviesAnimeNav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.page-btn {
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  border: none;
+}
+
+.page-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37,99,235,0.14);
+}
+
+.page-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(37,99,235,0.1);
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+#currentPage {
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  background-color: rgba(0,0,0,0.05);
+  color: var(--text);
+  font-weight: 500;
+}
+
+@media (prefers-color-scheme: dark) {
+  #currentPage {
+    background-color: rgba(255,255,255,0.1);
+    color: var(--text);
+  }
+}
+
+.rekom-text {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 auto;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+}
+
+.rekom-text:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.5);
+}
+
+.rekom-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+</style>
+<style>
+.banner-promo {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid rgba(15,23,42,0.05);
+  overflow: hidden;
+  border-radius: 1rem;
+  aspect-ratio: 16/4; 
+  bottom: 13px;
+}
+
+.banner-promo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px rgba(37,99,235,0.12);
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.banner-img:hover {
+  transform: scale(1.05);
+}
+
+/* responsive */
+@media (max-width: 640px) {
+  .banner-promo {
+    aspect-ratio: 16/5;
+  }
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+  .banner-promo {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  }
+  .banner-promo:hover {
+    box-shadow: 0 12px 28px rgba(37,99,235,0.25);
+  }
+}
+</style>
+<style>
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header,
+#topAnime .anime-card,
+#latestAnime .anime-card,
+.footer {
+  opacity: 0;
+  animation: fadeSlideUp 0.6s ease forwards;
+}
+
+#topAnime .anime-card {
+  animation-delay: 0.1s;
+}
+#latestAnime .anime-card:nth-child(1) { animation-delay: 0.15s; }
+#latestAnime .anime-card:nth-child(2) { animation-delay: 0.25s; }
+#latestAnime .anime-card:nth-child(3) { animation-delay: 0.35s; }
+#latestAnime .anime-card:nth-child(4) { animation-delay: 0.45s; }
+#latestAnime .anime-card:nth-child(5) { animation-delay: 0.55s; }
+/* dst sesuai jumlah anime-card */
+
+.footer {
+  animation-delay: 0.8s;
+}
+.anime-card {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.anime-card:nth-child(1) { animation-delay: 0.1s; }
+.anime-card:nth-child(2) { animation-delay: 0.2s; }
+.anime-card:nth-child(3) { animation-delay: 0.3s; }
+.anime-card:nth-child(4) { animation-delay: 0.4s; }
+.anime-card:nth-child(5) { animation-delay: 0.5s; }
+.anime-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+<style>
+/* --- Container Hari --- */
+.day-block {
+  margin-bottom: 2rem;
+}
+.day-block h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.2s;
+}
+.day-block h2:hover {
+  transform: translateY(-2px);
+}
+
+/* --- Grid Anime --- */
+.day-block .grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 1024px) { .day-block .grid { grid-template-columns: repeat(4,1fr); } }
+@media (max-width: 880px) { .day-block .grid { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 640px) { .day-block .grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 480px) { .day-block .grid { grid-template-columns: 1fr; } }
+
+/* --- Anime Card --- */
+.anime-card {
+  background: var(--surface);
+  /* backdrop-filter: blur(12px) saturate(120%); */ /* Removed for performance */
+  box-shadow: 0 4px 18px rgba(15,23,42,0.08);
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  will-change: transform, box-shadow;
+}
+.anime-card:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 12px 32px rgba(37,99,235,0.15);
+}
+
+/* --- Image Anime --- */
+.anime-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+.anime-card:hover img {
+  transform: scale(1.06);
+}
+
+/* --- Info Anime --- */
+.anime-card .p-3 {
+  padding: 0.6rem 0.8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.3rem;
+}
+.anime-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3rem;
+  color: var(--text);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.anime-card p {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.anime-card p i {
+  color: var(--accent1);
+}
+
+/* --- Rating --- */
+.anime-card .rating {
+  color: #FBBF24; /* amber-400 */
+  font-size: 0.75rem;
+}
+
+/* --- Dark Mode --- */
+@media (prefers-color-scheme: dark) {
+  .anime-card {
+    background: var(--surface, rgba(10,14,20,0.55));
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  }
+  .anime-card h3 { color: var(--text); }
+  .anime-card p { color: var(--muted); }
+  .day-block h2 {
+    -webkit-text-fill-color: transparent;
+    color: var(--accent1);
+  }
+}
+</style>
+<style id="dark-theme-override">
+  :root{
+    --bg:#071025;
+    --surface: rgba(10,14,20,0.55);
+    --text:#e6eef8;
+    --muted:#9ca3af;
+  }
+  body{
+    background: linear-gradient(180deg,#041226 0%, #071025 60%);
+    color:var(--text);
+  }
+  header{
+    background: linear-gradient(180deg, rgba(8,10,15,0.6), rgba(6,8,12,0.55));
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  #searchForm{
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 10px 30px rgba(2,6,23,0.45);
+  }
+  #searchInput{
+    color:var(--text);
+  }
+  .footer {
+    background-color: var(--surface, #0a0e14);
+    color: var(--text, #e6eef8);
+  }
+  .skeleton {
+    background: linear-gradient(90deg, #444 25%, #333 50%, #444 75%);
+    background-size: 200% 100%;
+  }
+  #topAnime .anime-card {
+    background: rgba(10,14,20,0.6);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  #topAnime .anime-card span {
+    background: var(--accent2);
+    color: #fff;
+  }
+  #topAnime .anime-card h3 {
+    color: var(--text);
+  }
+  #latestAnime .anime-card {
+    background: var(--surface);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+  #latestAnime .anime-card p {
+    color: var(--muted);
+  }
+  #latestAnime .anime-card i {
+    color: var(--accent2);
+  }
+  #currentPage, #currentCompletedPage, #currentMoviesPage {
+    background-color: rgba(255,255,255,0.1);
+    color: var(--text);
+  }
+  .banner-promo {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  }
+  .banner-promo:hover {
+    box-shadow: 0 12px 28px rgba(37,99,235,0.25);
+  }
+  .anime-card {
+    background: var(--surface, rgba(10,14,20,0.55));
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  }
+  .anime-card h3 { color: var(--text); }
+  .anime-card p { color: var(--muted); }
+  .day-block h2 {
+    -webkit-text-fill-color: transparent;
+    color: var(--accent1);
+  }
+  .dark .dark\:bg-gray-700, .dark .bg-gray-700 {
+    background-color: #374151;
+  }
+  .dark .dark\:text-gray-200, .dark .text-gray-200 {
+    color: #E5E7EB;
+  }
+  .dark .text-gray-800 {
+    color: #E5E7EB;
+  }
+  .dark .bg-gray-200 {
+    background-color: #374151;
+  }
+  body.dark .text-gray-900 {
+    color: #e6eef8; /* var(--text) */
+  }
+</style>
+</head>
+<body class="text-gray-900 dark">
+ <!-- Header -->
+<header class="bg-white shadow p-4 flex justify-between items-center sticky top-0 z-50">
+    <h1 class="text-2xl font-bold text-blue-600 flex items-center gap-2">
+      MikuNime
+    </h1>
+    <form id="searchForm" class="flex items-center">
+      <input type="text" id="searchInput" placeholder="Cari Anime Favoritmu..." class="focus:outline-none px-2 py-1 border rounded">
+      <button type="submit" id="searchBtn" class="bg-blue-600 text-white px-3 py-2 hover:bg-blue-700 flex items-center gap-1">
+        <i class="fas fa-search"></i> Cari
+      </button>
+    </form>
+</header>
+
+<main class="p-4 space-y-8">
+<!-- IKLAN BANNER SINGLE -->
+<section class="container mt-6">
+  <div id="bannerPromo" class="banner-promo cursor-pointer transition-transform duration-300"
+       onclick="window.location.href='../donghua/home.html'">
+    <img src="assets/991135.jpg"
+         alt="Buka Situs Donghua"
+         class="banner-img w-full h-full object-cover transition-transform duration-300 rounded-xl">
+  </div>
+</section>
+<!-- ANIME TOP 10 -->
+<section>
+  <div class="rekom-text-container">
+    <h2 class="rekom-text">
+      <i class="fas fa-fire"></i> ANIME POPULER</h2>
+  </div>
+  <div id="topAnime" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4"></div>
+</section>
+<!-- ANIME TERBARU -->
+<section class="container mt-6">
+  <div class="rekom-text-container">
+    <h2 class="rekom-text">
+      <i class="fas fa-clock"></i> ANIME TERBARU</h2>
+  </div>
+  
+  <!-- Container grid anime -->
+  <div id="latestAnime"></div>
+
+  <!-- Pagination -->
+  <div id="latestAnimeNav" class="flex justify-center gap-3 mt-4">
+    <button id="prevPage" class="page-btn">Prev</button>
+    <span id="currentPage" class="px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">1</span>
+    <button id="nextPage" class="page-btn">Next</button>
+  </div>
+</section>
+<!-- ANIME SUDAH TAMAT -->
+<section class="container mt-10">
+  <div class="rekom-text-container">
+    <h2 class="rekom-text">
+      <i class="fas fa-film"></i> ANIME MOVIES
+    </h2>
+  </div>
+  <div id="completedAnime"></div>
+
+  <!-- Pagination -->
+  <div id="completedAnimeNav" class="flex justify-center gap-3 mt-4">
+    <button id="prevCompletedPage" class="page-btn">Prev</button>
+    <span id="currentCompletedPage" class="px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">1</span>
+    <button id="nextCompletedPage" class="page-btn">Next</button>
+  </div>
+</section>
+
+
+<!-- ANIME MOVIES -->
+<section class="container mt-10">
+  <div class="rekom-text-container">
+    <h2 class="rekom-text">
+      <i class="fas fa-film"></i> ANIME MOVIES
+    </h2>
+  </div>
+  <div id="moviesAnime"></div>
+
+  <!-- Pagination -->
+  <div id="moviesAnimeNav" class="flex justify-center gap-3 mt-4">
+    <button id="prevMoviesPage" class="page-btn">Prev</button>
+    <span id="currentMoviesPage" class="px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">1</span>
+    <button id="nextMoviesPage" class="page-btn">Next</button>
+  </div>
+</section>
+
+
+  </main>
+    <nav class="bottom-nav">
+    <a href="home.html" class="nav-link active"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="search.html" class="nav-link"><i class="fas fa-search"></i><span>Cari</span></a>
+    <a href="list.html" class="nav-link"><i class="fas fa-list"></i><span>Daftar</span></a>
+    <a href="jadwal.html" class="nav-link"><i class="fas fa-film"></i><span>Movies</span></a>
+    <a href="history.html" class="nav-link"><i class="fas fa-history"></i><span>Riwayat</span></a>
+    <a href="profil.html" class="nav-link"><i class="fas fa-user"></i><span>Akun</span></a>
+  </nav>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+const API_BASE_URL = "https://www.sankavollerei.com/anime";
+
+// ===============================
+// 📌 State + Helper
+// ===============================
+let currentOngoingPage = Number(sessionStorage.getItem("currentOngoingPage")) || 1;
+let currentCompletedPage = 1;
+
+function setOngoingPage(page) {
+  currentOngoingPage = page;
+  sessionStorage.setItem("currentOngoingPage", page);
+  loadOngoingAnime(page);
+}
+
+function setCompletedPage(page) {
+  currentCompletedPage = page;
+  loadCompletedAnime(page);
+}
+
+
+
+// ===============================
+// 📌 Top Anime (Using Ongoing as fallback)
+// ===============================
+async function loadTopAnime() {
+  const container = document.getElementById("topAnime");
+  let skeletonHtml = '';
+  // Generate 7 skeletons to match the typical popular list size
+  for (let i = 0; i < 7; i++) { 
+    skeletonHtml += `<div class="skeleton-top-anime-card"><div class="skeleton skeleton-img"></div><div class="flex flex-col items-center mt-2 w-full"><div class="skeleton skeleton-title"></div></div></div>`;
+  }
+  container.innerHTML = skeletonHtml;
+
+  try {
+    const res = await axios.get(`https://apis.yanzkageno.biz.id/api/animeindo/home`);
+    const list = res.data.popular; // Use the 'popular' array
+
+    if (!Array.isArray(list)) throw new Error("Format API populer tidak valid");
+
+    container.innerHTML = ''; // Clear skeletons
+
+    for (const anime of list) {
+      const card = document.createElement('div');
+      card.className = 'anime-card p-2 rounded-xl shadow hover:scale-[1.02] transition relative cursor-pointer flex flex-col';
+      card.dataset.slug = anime.slug;
+      card.innerHTML = `
+        <img src="${anime.image}" alt="${anime.title}" class="rounded-lg w-full h-40 object-cover" loading="lazy">
+        <div class="flex flex-col items-center mt-2 w-full">
+          <h3 class="text-sm font-semibold text-gray-800 dark:text-white truncate text-center">${anime.title}</h3>
+        </div>
+      `; // Score element is removed
+      card.addEventListener('click', () => {
+        if (anime.slug) window.location.href = `info.html?slug=${anime.slug}`;
+      });
+      container.appendChild(card);
+    }
+
+  } catch (err) {
+    console.error("❌ Gagal memuat anime populer:", err);
+    container.innerHTML = `<p class="text-center text-red-500">Gagal memuat anime populer.</p>`;
+  }
+}
+
+// ===============================
+// 📌 Anime Terbaru (Ongoing) + Pagination
+// ===============================
+async function loadOngoingAnime(page = 1, retries = 3) {
+  const container = document.getElementById("latestAnime");
+  let skeletonHtml = '';
+  for (let i = 0; i < 15; i++) {
+    skeletonHtml += `<div class="skeleton-latest-anime-card"><div class="skeleton skeleton-img"></div><div class="p-2"><div class="skeleton skeleton-title"></div><div class="skeleton skeleton-text"></div></div></div>`;
+  }
+  container.innerHTML = skeletonHtml;
+
+  try {
+    const res = await axios.get(`https://apis.yanzkageno.biz.id/api/animeindo/home/page/${page}`);
+    const list = res.data.latest_updates;
+
+    if (!Array.isArray(list)) throw new Error("Format API ongoing tidak valid");
+
+    container.innerHTML = "";
+    if (list.length === 0) {
+            container.innerHTML = `<p class="text-center text-gray-500 dark:text-gray-400">Tidak ada anime di halaman ini.</p>`;
+            document.getElementById('nextPage').disabled = true; // Disable next if no results
+            return;
+          }
+      
+          list.slice(0, 15).forEach(anime => {
+      const card = document.createElement('div');
+      card.className = 'anime-card';
+      card.dataset.slug = anime.slug;
+      card.innerHTML = `
+        <img src="${anime.image}" alt="${anime.title}" loading="lazy">
+        <div class="p-2">
+          <h3 class="font-semibold">${anime.title}</h3>
+          <p><i class="fa-solid fa-clapperboard"></i> Episode ${anime.episode}</p>
+        </div>
+      `;
+      card.addEventListener('click', () => {
+        if (anime.slug) {
+          window.location.href = `info.html?slug=${anime.slug}`;
+        }
+      });
+      container.appendChild(card);
+    });
+
+    // Update pagination UI
+    document.getElementById('currentPage').textContent = page;
+    document.getElementById('prevPage').disabled = page === 1;
+    document.getElementById('nextPage').disabled = list.length === 0;
+    document.getElementById('latestAnimeNav').style.display = 'flex';
+
+
+  } catch (err) {
+    console.error("❌ Gagal memuat anime terbaru:", err);
+    if (retries > 0) {
+      container.innerHTML = `<p class="text-center text-red-500">Gagal memuat anime terbaru. Mencoba lagi... (${retries} percobaan tersisa)</p>`;
+      setTimeout(() => loadOngoingAnime(page, retries - 1), 2000); // Retry after 2 seconds
+    } else {
+      container.innerHTML = `<p class="text-center text-red-500">Gagal memuat anime terbaru. Silakan coba refresh halaman.</p>`;
+    }
+  }
+}
+
+// ===============================
+// 📌 Anime Movies (Section Removed)
+// ===============================
+document.getElementById("moviesAnime").parentElement.style.display = 'none';
+
+// ===============================
+// 📌 Anime Sudah Tamat
+// ===============================
+async function loadCompletedAnime(page = 1) {
+  const container = document.getElementById("completedAnime");
+  if (!container) return;
+
+  let skeletonHtml = '';
+  for (let i = 0; i < 8; i++) {
+    skeletonHtml += `<div class="skeleton-latest-anime-card"><div class="skeleton skeleton-img"></div><div class="p-2"><div class="skeleton skeleton-title"></div><div class="skeleton skeleton-text"></div></div></div>`;
+  }
+  container.innerHTML = skeletonHtml;
+
+  try {
+    const res = await axios.get(`https://apis.yanzkageno.biz.id/api/animeindo/movie/page/${page}`);
+    const list = res.data.results;
+
+    if (!Array.isArray(list)) throw new Error("Format API movie tidak valid");
+
+    container.innerHTML = "";
+    if (list.length === 0) {
+      container.innerHTML = `<p class="text-center text-gray-500 dark:text-gray-400 col-span-full">Tidak ada film yang ditemukan di halaman ini.</p>`;
+      document.getElementById('nextCompletedPage').disabled = true;
+      return;
+    }
+
+    list.forEach(anime => {
+      const card = document.createElement('div');
+      card.className = 'anime-card';
+      card.dataset.slug = anime.slug;
+      const labelsHTML = (anime.labels || []).map(label => `<span class="text-xs">${label}</span>`).join(' &middot; ');
+      card.innerHTML = `
+        <img src="${anime.image}" alt="${anime.title}" loading="lazy">
+        <div class="p-2">
+          <h3 class="font-semibold">${anime.title}</h3>
+          <p class="text-gray-500 text-xs">${labelsHTML}</p>
+        </div>
+      `;
+      card.addEventListener('click', () => {
+        if (anime.slug) window.location.href = `info.html?slug=${anime.slug}`;
+      });
+      container.appendChild(card);
+    });
+
+    document.getElementById('currentCompletedPage').textContent = page;
+    document.getElementById('prevCompletedPage').disabled = page === 1;
+    document.getElementById('nextCompletedPage').disabled = list.length === 0;
+
+  } catch (err) {
+    console.error("❌ Gagal memuat film anime:", err);
+    container.innerHTML = `<p class="text-center text-red-500 col-span-full">Gagal memuat film anime.</p>`;
+  }
+}
+
+// ===============================
+// 📌 Event Listeners
+// ===============================
+if (!window.hasSetupListeners) {
+  window.hasSetupListeners = true;
+
+  document.getElementById('prevPage').addEventListener('click', () => {
+    if (currentOngoingPage > 1) setOngoingPage(currentOngoingPage - 1);
+  });
+
+  document.getElementById('nextPage').addEventListener('click', () => {
+    setOngoingPage(currentOngoingPage + 1);
+  });
+
+  document.getElementById('prevCompletedPage').addEventListener('click', () => {
+    if (currentCompletedPage > 1) setCompletedPage(currentCompletedPage - 1);
+  });
+
+  document.getElementById('nextCompletedPage').addEventListener('click', () => {
+    setCompletedPage(currentCompletedPage + 1);
+  });
+
+  const prevMoviesBtn = document.getElementById('prevMoviesPage');
+  if(prevMoviesBtn) prevMoviesBtn.parentElement.style.display = 'none';
+
+  document.getElementById('searchForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const query = document.getElementById('searchInput').value.trim();
+    if (!query) return;
+    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+  });
+
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+      localStorage.clear();
+      window.location.reload();
+    }
+  });
+}
+
+// ===============================
+// 📌 Initial Load
+// ===============================
+loadOngoingAnime(currentOngoingPage);
+loadTopAnime();
+loadCompletedAnime(currentCompletedPage);
+</script>
+<script type="module">
+  import { initializePresence } from './assets/presence.js';
+  initializePresence('Home');
+</script>
+</body>
+</html>

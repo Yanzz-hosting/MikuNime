@@ -1,0 +1,448 @@
+{
+  "creator": "Sanka Vollerei",
+  "message": "",
+  "data": {
+    "days": [
+      {
+        "day": "Friday",
+        "animeList": [
+          {
+            "title": "Dandadan Season 2",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/149001.jpg",
+            "type": "TV",
+            "score": "8.48",
+            "estimation": "Update",
+            "genres": "Action, Comedy",
+            "animeId": "dandadan-season-2",
+            "href": "/samehadaku/anime/dandadan-season-2",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/dandadan-season-2/"
+          },
+          {
+            "title": "Mizu Zokusei no Mahoutsukai",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Mizu-Zokusei-no-Mahoutsukai.jpg",
+            "type": "TV",
+            "score": "7.13",
+            "estimation": "Update",
+            "genres": "Action, Fantasy",
+            "animeId": "mizu-zokusei-no-mahoutsukai",
+            "href": "/samehadaku/anime/mizu-zokusei-no-mahoutsukai",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/mizu-zokusei-no-mahoutsukai/"
+          },
+          {
+            "title": "Yami Healer",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/147335.jpg",
+            "type": "TV",
+            "score": "6.85",
+            "estimation": "Update",
+            "genres": "Fantasy",
+            "animeId": "yami-healer",
+            "href": "/samehadaku/anime/yami-healer",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/yami-healer/"
+          },
+          {
+            "title": "Wind Breaker S2",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/bx178680-nIAhCizY46ZU.jpg",
+            "type": "TV",
+            "score": "8.15",
+            "estimation": "Update",
+            "genres": "Action, Delinquents",
+            "animeId": "wind-breaker-s2",
+            "href": "/samehadaku/anime/wind-breaker-s2",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/wind-breaker-s2/"
+          },
+          {
+            "title": "Nihon e Youkoso Elf-san.",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/01/146113.jpg",
+            "type": "TV",
+            "score": "7.2",
+            "estimation": "0d 15h 45m",
+            "genres": "Comedy, Supernatural",
+            "animeId": "nihon-e-youkoso-elf-san",
+            "href": "/samehadaku/anime/nihon-e-youkoso-elf-san",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/nihon-e-youkoso-elf-san/"
+          },
+          {
+            "title": "Fugukan",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/01/bx178548-4QkzBuJAx8w7.jpg",
+            "type": "TV",
+            "score": "6.60",
+            "estimation": "Update",
+            "genres": "Action, Adventure",
+            "animeId": "fuguushoku-kanteishi-ga-jitsu-wa-saikyou-datta",
+            "href": "/samehadaku/anime/fuguushoku-kanteishi-ga-jitsu-wa-saikyou-datta",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/fuguushoku-kanteishi-ga-jitsu-wa-saikyou-datta/"
+          },
+          {
+            "title": "Rurouni Kenshin (2023) Season 2",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/10/145530l.jpg",
+            "type": "TV",
+            "score": "7.97",
+            "estimation": "Update",
+            "genres": "Action, Historical",
+            "animeId": "rurouni-kenshin-meiji-kenkaku-romantan-kyoto-douran",
+            "href": "/samehadaku/anime/rurouni-kenshin-meiji-kenkaku-romantan-kyoto-douran",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/rurouni-kenshin-meiji-kenkaku-romantan-kyoto-douran/"
+          },
+          {
+            "title": "Sayounara Ryuusei, Konnichiwa Jinsei",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/10/bx176053-HfPo4pUm6Ktg.jpg",
+            "type": "TV",
+            "score": "6.34",
+            "estimation": "Update",
+            "genres": "Action, Adventure",
+            "animeId": "sayounara-ryuusei-konnichiwa-jinsei",
+            "href": "/samehadaku/anime/sayounara-ryuusei-konnichiwa-jinsei",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/sayounara-ryuusei-konnichiwa-jinsei/"
+          },
+          {
+            "title": "Ao no Hako",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/10/145349l.jpg",
+            "type": "TV",
+            "score": "8.32",
+            "estimation": "Update",
+            "genres": "Romance, School",
+            "animeId": "ao-no-hako",
+            "href": "/samehadaku/anime/ao-no-hako",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/ao-no-hako/"
+          },
+          {
+            "title": "Trillion Game",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/10/bx169315-NtbOlSyDtSCZ.png",
+            "type": "TV",
+            "score": "",
+            "estimation": "Update",
+            "genres": "Adult Cast, Drama",
+            "animeId": "trillion-game",
+            "href": "/samehadaku/anime/trillion-game",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/trillion-game/"
+          }
+        ]
+      },
+      {
+        "day": "Saturday",
+        "animeList": [
+          {
+            "title": "Sidonia no Kishi Ai Tsumugu Hoshi",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/108354.jpg",
+            "type": "Movie",
+            "score": "7.45",
+            "estimation": "1d 11h 15m",
+            "genres": "Action, Sci-Fi",
+            "animeId": "sidonia-no-kishi-ai-tsumugu-hoshi",
+            "href": "/samehadaku/anime/sidonia-no-kishi-ai-tsumugu-hoshi",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/sidonia-no-kishi-ai-tsumugu-hoshi/"
+          },
+          {
+            "title": "Tougen Anki",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Tougen-Anki.jpg",
+            "type": "TV",
+            "score": "7.20",
+            "estimation": "0d 17h 10m",
+            "genres": "Action, Fantasy",
+            "animeId": "tougen-anki",
+            "href": "/samehadaku/anime/tougen-anki",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/tougen-anki/"
+          },
+          {
+            "title": "Kizetsu Yuusha to Ansatsu Hime",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Kizetsu-Yuusha-to-Ansatsu-Hime.jpg",
+            "type": "TV",
+            "score": "6.28",
+            "estimation": "1d 16h 5m",
+            "genres": "Action, Comedy",
+            "animeId": "kizetsu-yuusha-to-ansatsu-hime",
+            "href": "/samehadaku/anime/kizetsu-yuusha-to-ansatsu-hime",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/kizetsu-yuusha-to-ansatsu-hime/"
+          },
+          {
+            "title": "Kaijuu 8-gou Season 2",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/150344.jpg",
+            "type": "TV",
+            "score": "7.9",
+            "estimation": "1d 15h 46m",
+            "genres": "Action, Adult Cast",
+            "animeId": "kaijuu-8-gou-season-2",
+            "href": "/samehadaku/anime/kaijuu-8-gou-season-2",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/kaijuu-8-gou-season-2/"
+          },
+          {
+            "title": "Zutaboro Reijou wa Ane no Moto",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Zutaboro-Reijou-wa-Ane-no-Moto-v2.jpg",
+            "type": "TV",
+            "score": "7.26",
+            "estimation": "0d 19h 45m",
+            "genres": "Comedy, Josei",
+            "animeId": "zutaboro-reijou-wa-ane-no-moto",
+            "href": "/samehadaku/anime/zutaboro-reijou-wa-ane-no-moto",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/zutaboro-reijou-wa-ane-no-moto/"
+          },
+          {
+            "title": "Yofukashi no Uta Season 2",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Yofukashi-no-Uta-Season-2.jpg",
+            "type": "TV",
+            "score": "8.32",
+            "estimation": "0d 17h 45m",
+            "genres": "Romance, Shounen",
+            "animeId": "yofukashi-no-uta-season-2",
+            "href": "/samehadaku/anime/yofukashi-no-uta-season-2",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/yofukashi-no-uta-season-2/"
+          },
+          {
+            "title": "Silent Witch",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/bx179966-g0EU7rVe2Og7.jpg",
+            "type": "TV",
+            "score": "7.83",
+            "estimation": "0d 18h 45m",
+            "genres": "Fantasy, School",
+            "animeId": "silent-witch",
+            "href": "/samehadaku/anime/silent-witch",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/silent-witch/"
+          },
+          {
+            "title": "Teogonia",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/Teogonia.jpg",
+            "type": "TV",
+            "score": "6.95",
+            "estimation": "0d 18h 15m",
+            "genres": "Action, Adventure",
+            "animeId": "teogonia",
+            "href": "/samehadaku/anime/teogonia",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/teogonia/"
+          },
+          {
+            "title": "Guilty Gear Strive Dual Rulers",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/147623.jpg",
+            "type": "TV",
+            "score": "6.04",
+            "estimation": "1d 15h 15m",
+            "genres": "Action, Fantasy",
+            "animeId": "guilty-gear-strive-dual-rulers",
+            "href": "/samehadaku/anime/guilty-gear-strive-dual-rulers",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/guilty-gear-strive-dual-rulers/"
+          },
+          {
+            "title": "Kowloon Generic Romance",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/bx182814-UTKRUUm7Jah5.jpg",
+            "type": "TV",
+            "score": "7.83",
+            "estimation": "1d 15h 45m",
+            "genres": "Adult Cast, Romance",
+            "animeId": "kowloon-generic-romance",
+            "href": "/samehadaku/anime/kowloon-generic-romance",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/kowloon-generic-romance/"
+          }
+        ]
+      },
+      {
+        "day": "Sunday",
+        "animeList": [
+          {
+            "title": "Gachiakuta",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/150432.jpg",
+            "type": "TV",
+            "score": "8.02",
+            "estimation": "2d 16h 5m",
+            "genres": "Action, Fantasy",
+            "animeId": "gachiakuta",
+            "href": "/samehadaku/anime/gachiakuta",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/gachiakuta/"
+          },
+          {
+            "title": "Isekai Mokushiroku Mynoghra",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/150383.jpg",
+            "type": "TV",
+            "score": "7.13",
+            "estimation": "2d 16h 10m",
+            "genres": "Adventure, Fantasy",
+            "animeId": "isekai-mokushiroku-mynoghra",
+            "href": "/samehadaku/anime/isekai-mokushiroku-mynoghra",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/isekai-mokushiroku-mynoghra/"
+          },
+          {
+            "title": "Kaoru Hana wa Rin to Saku",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Kaoru-Hana-wa-Rin-to-Saku.jpg",
+            "type": "TV",
+            "score": "8.69",
+            "estimation": "1d 19h 15m",
+            "genres": "Drama, Romance",
+            "animeId": "kaoru-hana-wa-rin-to-saku",
+            "href": "/samehadaku/anime/kaoru-hana-wa-rin-to-saku",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/kaoru-hana-wa-rin-to-saku/"
+          },
+          {
+            "title": "Seishun Buta Yarou wa Santa Claus no Yume wo Minai",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Seishun-Buta-Yarou-wa-Santa-Claus-no-Yume-wo-Minai.jpg",
+            "type": "TV",
+            "score": "8.24",
+            "estimation": "1d 18h 15m",
+            "genres": "Drama, Romance",
+            "animeId": "seishun-buta-yarou-wa-santa-claus-no-yume-wo-minai",
+            "href": "/samehadaku/anime/seishun-buta-yarou-wa-santa-claus-no-yume-wo-minai",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/seishun-buta-yarou-wa-santa-claus-no-yume-wo-minai/"
+          },
+          {
+            "title": "Hikaru ga Shinda Natsu",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/148614.jpg",
+            "type": "TV",
+            "score": "8.2",
+            "estimation": "1d 19h 15m",
+            "genres": "Horror, Mystery",
+            "animeId": "hikaru-ga-shinda-natsu",
+            "href": "/samehadaku/anime/hikaru-ga-shinda-natsu",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/hikaru-ga-shinda-natsu/"
+          },
+          {
+            "title": "Sono Bisque Doll wa Koi wo Suru Season 2",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/150787.jpg",
+            "type": "TV",
+            "score": "8.46",
+            "estimation": "1d 18h 15m",
+            "genres": "Romance, School",
+            "animeId": "sono-bisque-doll-wa-koi-wo-suru-season-2",
+            "href": "/samehadaku/anime/sono-bisque-doll-wa-koi-wo-suru-season-2",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/sono-bisque-doll-wa-koi-wo-suru-season-2/"
+          },
+          {
+            "title": "Koujo Denka no Kateikyoushi",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/06/bx170113-dk9h9ybZnGnZ.jpg",
+            "type": "TV",
+            "score": "6.94",
+            "estimation": "1d 19h 15m",
+            "genres": "Fantasy",
+            "animeId": "koujo-denka-no-kateikyoushi",
+            "href": "/samehadaku/anime/koujo-denka-no-kateikyoushi",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/koujo-denka-no-kateikyoushi/"
+          },
+          {
+            "title": "Sentai Daishikkaku S2",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/bx178781-pbk5FgfiAJxS.jpg",
+            "type": "TV",
+            "score": "7.65",
+            "estimation": "1d 17h 35m",
+            "genres": "Action, Fantasy",
+            "animeId": "sentai-daishikkaku-s2",
+            "href": "/samehadaku/anime/sentai-daishikkaku-s2",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/sentai-daishikkaku-s2/"
+          },
+          {
+            "title": "Witch Watch",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/148017.jpg",
+            "type": "TV",
+            "score": "6.2",
+            "estimation": "2d 10h 45m",
+            "genres": "Comedy, Supernatural",
+            "animeId": "witch-watch",
+            "href": "/samehadaku/anime/witch-watch",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/witch-watch/"
+          },
+          {
+            "title": "Lazarus",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/148185.jpg",
+            "type": "TV",
+            "score": "7.1",
+            "estimation": "2d 3h 45m",
+            "genres": "Sci-Fi",
+            "animeId": "lazarus",
+            "href": "/samehadaku/anime/lazarus",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/lazarus/"
+          }
+        ]
+      },
+      {
+        "day": "Monday",
+        "animeList": [
+          {
+            "title": "Sakamoto Days Cour 2",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/bx184237-OJAksU2fsIPx.jpg",
+            "type": "TV",
+            "score": "7.9",
+            "estimation": "3d 16h 12m",
+            "genres": "Action, Adult Cast",
+            "animeId": "sakamoto-days-cour-2",
+            "href": "/samehadaku/anime/sakamoto-days-cour-2",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/sakamoto-days-cour-2/"
+          },
+          {
+            "title": "Busamen Gachi Fighter",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/150515.jpg",
+            "type": "TV",
+            "score": "6.68",
+            "estimation": "2d 16h 15m",
+            "genres": "Action, Adventure",
+            "animeId": "busamen-gachi-fighter",
+            "href": "/samehadaku/anime/busamen-gachi-fighter",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/busamen-gachi-fighter/"
+          },
+          {
+            "title": "Zatsu Tabi",
+            "poster": "",
+            "type": "TV",
+            "score": "7.05",
+            "estimation": "Update",
+            "genres": "Adventure, Seinen",
+            "animeId": "zatsu-tabi",
+            "href": "/samehadaku/anime/zatsu-tabi",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/zatsu-tabi/"
+          },
+          {
+            "title": "Aharen san wa Hakarenai Season 2",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/Aharen-san-wa-Hakarenai-Season-2.jpg",
+            "type": "TV",
+            "score": "7.38",
+            "estimation": "3d 15h 15m",
+            "genres": "Comedy, Love Status Quo",
+            "animeId": "aharen-san-wa-hakarenai-season-2",
+            "href": "/samehadaku/anime/aharen-san-wa-hakarenai-season-2",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/aharen-san-wa-hakarenai-season-2/"
+          },
+          {
+            "title": "Gorilla no Kami kara Kago sareta",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/Gorilla-no-Kami-kara-Kago-sareta.jpg",
+            "type": "TV",
+            "score": "6.64",
+            "estimation": "2d 17h 15m",
+            "genres": "Fantasy, Romance",
+            "animeId": "gorilla-no-kami-kara-kago-sareta",
+            "href": "/samehadaku/anime/gorilla-no-kami-kara-kago-sareta",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/gorilla-no-kami-kara-kago-sareta/"
+          },
+          {
+            "title": "Yandere Dark Elf",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/bx180829-jHViG8fIkaIJ.jpg",
+            "type": "TV",
+            "score": "6.13",
+            "estimation": "2d 17h 45m",
+            "genres": "Comedy, Erotica",
+            "animeId": "yandere-dark-elf",
+            "href": "/samehadaku/anime/yandere-dark-elf",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/yandere-dark-elf/"
+          },
+          {
+            "title": "Kanchigai no Atelier Meister",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/03/bx183133-SSeg5j1UrMDG.png",
+            "type": "TV",
+            "score": "7.01",
+            "estimation": "2d 17h 15m",
+            "genres": "Action, Adventure",
+            "animeId": "kanchigai-no-atelier-meister",
+            "href": "/samehadaku/anime/kanchigai-no-atelier-meister",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/kanchigai-no-atelier-meister/"
+          },
+          {
+            "title": "Sentai Red Isekai",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/01/sentai-red.jpg",
+            "type": "TV",
+            "score": "6.78",
+            "estimation": "2d 16h 15m",
+            "genres": "Action, Adventure",
+            "animeId": "sentai-red-isekai-de-boukensha-ni-naru",
+            "href": "/samehadaku/anime/sentai-red-isekai-de-boukensha-ni-naru",
+            "samehadakuUrl": "https://v1.samehadaku.how/anime/sentai-red-isekai-de-boukensha-ni-naru/"
+          },
+          {
+            "title": "Hyakkano Season 2",
+            "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/01/145470.jpg",
+            "type": "TV",
+            "score": "8.13",
+            "estimation": "2d 16h 15m",
+            "ge

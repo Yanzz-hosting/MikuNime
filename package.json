@@ -1,0 +1,15 @@
+{
+  "name": "animeflix-proxy",
+  "version": "1.0.0",
+  "description": "Vercel serverless function for animeflix API proxy",
+  "main": "api/stream.js",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

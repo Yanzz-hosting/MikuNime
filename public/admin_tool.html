@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Update Tool</title>
+</head>
+<body>
+    <h1>Admin Update Tool</h1>
+    <p>Running update script...</p>
+    <p id="status">Status: Pending...</p>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getFirestore, doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDTcbRUWzRKTl6LKyTg0_j2XJcX4e06Am8",
+          authDomain: "komen-1ee45.firebaseapp.com",
+          databaseURL: "https://komen-1ee45-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "komen-1ee45",
+          storageBucket: "komen-1ee45.appspot.com",
+          messagingSenderId: "953509129047",
+          appId: "1:953509129047:web:90be3e4d88be1782a52c12",
+          measurementId: "G-JY2VYJQLJ8"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const statusElement = document.getElementById('status');
+
+        async function updateUser() {
+            const userIdToUpdate = 'bHnsbCu4CFfHcn9PlpNqf8tIBQb2';
+            const userDocRef = doc(db, 'users', userIdToUpdate);
+
+            try {
+                await updateDoc(userDocRef, {
+                    role: 'admin',
+                    level: 20000
+                });
+                const message = `Successfully updated user ${userIdToUpdate}. Role: admin, Level: 20000.`;
+                console.log(message);
+                statusElement.textContent = `Status: ${message}`;
+                alert(message);
+            } catch (error) {
+                const message = `Failed to update user: ${error.message}`;
+                console.error(message);
+                statusElement.textContent = `Status: ${message}`;
+                alert(message);
+            }
+        }
+
+        // Run the update function when the page loads
+        updateUser();
+    </script>
+</body>
+</html>

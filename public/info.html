@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="all">
+    <title></title>
+    
+    <meta property="og:type" content="website" />
+    
+    
+    <meta property="og:image" content="https://raw.githubusercontent.com/Yudzxml/UploaderV2/main/tmp/55337a9f.png" />
+   
+   <meta property="og:url" content="https://huastream.yydz.my.id" />
+   <meta name="keywords" content="nonton donghua, nonton anime, donghua sub indo, anime sub indo, streaming anime, streaming donghua, anime terbaru, donghua terbaru, huastream" itemprop="keywords" />
+   
+    <meta name="thumbnailUrl" content="https://raw.githubusercontent.com/Yudzxml/UploaderV2/main/tmp/55337a9f.png" itemprop="thumbnailUrl" />
+    <meta content="https://huastream.yydz.my.id" itemprop="url" />
+    <link rel="canonical" href="https://huastream.yydz.my.id" />
+    <link rel="icon" href="https://raw.githubusercontent.com/Yudzxml/UploaderV2/main/tmp/26250dc9.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="../manifest.json" />
+    
+    <meta name="theme-color" content="#2563eb" />
+     <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("../service-worker.js")
+     }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  *,
+*::before,
+*::after { box-sizing: border-box; }
+
+:root{
+  --bg:#f6f8fb;
+  --surface: rgba(255,255,255,0.85);
+  --text:#0f1724;
+  --muted:#6b7280;
+  --accent1:#2563eb;
+  --accent2:#7c3aed;
+  --glass: rgba(255,255,255,0.6);
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family:'Poppins', 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#fbfdff 0%, #eef6ff 40%, var(--bg) 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 1rem;
+}
+
+/* header */
+header{
+  position:sticky;
+  top:0;
+  z-index:60;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.65rem 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.55));
+  border-bottom: 1px solid rgba(15,23,42,0.04);
+  transition: box-shadow .22s ease, transform .18s ease;
+}
+
+header.elev{ box-shadow: 0 8px 30px rgba(15,23,42,0.06); transform: translateY(-1px); }
+
+/* logo */
+header h1{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  margin:0;
+  font-weight:800;
+  font-size:1.25rem;
+  letter-spacing:-0.2px;
+  background: linear-gradient(90deg,var(--accent1),var(--accent2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+/* logo icon badge */
+.logo-badge{
+  display:inline-grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(124,58,237,0.10));
+  box-shadow: 0 6px 18px rgba(37,99,235,0.08);
+  color:var(--accent1);
+  font-size:1rem;
+}
+
+/* search form (pill) */
+#searchForm{
+  display:flex;
+  align-items:center;
+  gap:.3rem;
+  padding:3px 6px;
+  border-radius:9999px;
+  background: var(--surface);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+  border: 1px solid rgba(15,23,42,0.05);
+  transition: box-shadow .18s ease, transform .18s ease;
+  max-width: 260px; 
+}
+
+/* focus state */
+#searchForm:focus-within{
+  box-shadow: 0 10px 28px rgba(37,99,235,0.08);
+  transform: translateY(-1.5px);
+  border-color: rgba(99,102,241,0.12);
+}
+
+/* input */
+#searchInput{
+  background: transparent;
+  border: none;
+  padding:.4rem .6rem;
+  width: 100%;
+  max-width: 180px;   /* <-- lebih ramping */
+  font: 500 .9rem/1.2 'Inter', system-ui, sans-serif;
+  color:var(--text);
+  caret-color: var(--accent1);
+  outline: none;
+}
+
+/* button */
+#searchBtn{
+  display:inline-flex;
+  align-items:center;
+  gap:.3rem;
+  border:none;
+  padding:.4rem .7rem;
+  border-radius:9999px;
+  font-weight:600;
+  font-size:.85rem;
+  color:#fff;
+  background: linear-gradient(90deg,var(--accent1),var(--accent2));
+  cursor:pointer;
+  box-shadow: 0 8px 20px rgba(37,99,235,0.1);
+  transition: transform .14s cubic-bezier(.2,.8,.2,1), box-shadow .14s ease;
+}
+
+/* hover/active */
+#searchBtn:hover{ transform: translateY(-2px); box-shadow: 0 14px 28px rgba(37,99,235,0.14); }
+#searchBtn:active{ transform: translateY(0); box-shadow: 0 6px 16px rgba(37,99,235,0.1); }
+
+/* responsive */
+@media (max-width:880px){
+  .container{ padding:0 .9rem; }
+  #searchForm{ max-width: 100%; }
+  #searchInput{ max-width: 100%; }
+}
+
+@media (max-width:640px){
+  header{ flex-direction:column; align-items:stretch; gap:.6rem; padding:.6rem 0; }
+  header h1{ justify-content:center; width:100%; }
+  #searchForm{ width:100%; max-width: 100%; } 
+  #searchInput{ flex:1; width:100%; }
+  #searchBtn{ padding:.5rem .7rem; font-size:.85rem; }
+}
+
+/* dark mode */
+@media (prefers-color-scheme: dark){
+  :root{ --text:#e6eef8; --muted:#9ca3af; --bg:#071025; --surface: rgba(10,14,20,0.55); }
+  body{ background: linear-gradient(180deg,#041226 0%, #071025 60%); color:var(--text); }
+  header{ background: linear-gradient(180deg, rgba(8,10,15,0.6), rgba(6,8,12,0.55)); border-bottom: 1px solid rgba(255,255,255,0.03); }
+  #searchForm{ background: var(--surface); border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 10px 30px rgba(2,6,23,0.45); }
+  #searchInput{ color:var(--text); }
+}
+
+/* Header with Back Button */
+header {
+  justify-content: flex-start; /* Align items to the start */
+  gap: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+}
+
+.back-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.page-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+
+/* =======================
+   SKELETON LOADER
+======================= */
+.skeleton {
+  background-color: #e0e0e0; /* Light gray for skeleton */
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+.skeleton-dark {
+  background-color: #333; /* Dark gray for skeleton in dark mode */
+  background: linear-gradient(90deg, #444 25%, #333 50%, #444 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.skeleton-info-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-info-header .skeleton-title {
+  height: 2.5rem;
+  width: 80%;
+}
+
+.skeleton-info-header .skeleton-subtitle {
+  height: 1.5rem;
+  width: 60%;
+}
+
+.skeleton-info-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skeleton-info-main .skeleton-img {
+  width: 100%;
+  height: 250px; /* Adjust height as needed */
+  border-radius: 0.5rem;
+}
+
+.skeleton-info-main .skeleton-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-info-main .skeleton-text-block .skeleton-line {
+  height: 1em;
+  width: 100%;
+}
+
+.skeleton-info-main .skeleton-text-block .skeleton-line:nth-child(odd) {
+  width: 90%;
+}
+
+.skeleton-info-main .skeleton-text-block .skeleton-line:nth-child(even) {
+  width: 95%;
+}
+
+.skeleton-info-main .skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.skeleton-info-main .skeleton-grid .skeleton-item {
+  height: 1.5em;
+  width: 100%;
+}
+
+.skeleton-info-main .skeleton-episode-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Match episode list grid */
+  gap: 0.5rem;
+}
+
+.skeleton-info-main .skeleton-episode-list .skeleton-episode {
+  height: 2.5em;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 768px) { /* Adjust for larger screens */
+  .skeleton-info-main {
+    flex-direction: row;
+  }
+  .skeleton-info-main .skeleton-img {
+    width: 30%;
+    height: 350px;
+  }
+  .skeleton-info-main .skeleton-text-block {
+    width: 70%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .skeleton {
+    background: linear-gradient(90deg, #444 25%, #333 50%, #444 75%);
+    background-size: 200% 100%;
+  }
+}
+
+.rekom-text {
+  font-size: 1rem; /* kecil */
+  font-weight: 600;
+  text-align: center; /* tengah */
+  margin-bottom: 0.75rem;
+  color: #ffff; /* bisa diganti sesuai tema */
+}
+
+/* Gradient untuk ikon */
+.gradient-icon {
+  background: linear-gradient(90deg, #3b82f6, #06b6d4); /* biru ke cyan */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===========================
+   Layout dasar agar footer di bawah
+=========================== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* ===========================
+   Konten utama fleksibel
+=========================== */
+main {
+  padding: 1rem;
+}
+
+/* ===========================
+   Footer styling
+=========================== */
+.footer {
+  background-color: var(--bg);
+  color: var(--text);
+  text-align: center;
+  padding: 1rem 0 0; 
+  border-radius: 1rem 1rem 0 0;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  flex-shrink: 0; /* jangan mengecil */
+}
+
+.footer .container {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.footer .container:active {
+  box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+  transform: translateY(-1px);
+}
+
+.footer .copyright {
+  font-size: 0.8rem;
+}
+.footer p {
+  margin: 0.5rem 0;
+}
+.footer .contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.3rem;
+}
+
+.footer .contact-icons a {
+  transition: transform 0.2s;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer .contact-icons a:active {
+  transform: scale(1.2);
+}
+
+.footer .team {
+  font-size: 0.75rem;
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  background-color: var(--bg);
+  z-index: -1;
+}
+
+.gradient-text {
+  transition: transform 0.2s;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: var(--surface, #0a0e14);
+    color: var(--text, #e6eef8);
+  }
+}
+
+/* Full-page Loader */
+#full-page-loader-wrapper {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: var(--bg, #1a1a1a) !important; /* Use theme background */
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 99999 !important;
+}
+
+#full-page-loader-wrapper .loader {
+    border: 8px solid #333; /* Dark grey */
+    border-top: 8px solid var(--accent1, #e53e3e); /* Red accent */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden-loader {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+</style>
+<style>
+/* --- Wrapper utama (glass card) --- */
+.anime-detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
+  background: var(--surface, rgba(255,255,255,0.85));
+  border-radius: 1rem;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.anime-detail-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+}
+
+/* --- Thumbnail utama + overlay gradient --- */
+.anime-thumb-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Gradient overlay tetap tapi tidak berubah saat hover */
+.anime-thumb-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%; /* separuh dari bawah */
+  background: linear-gradient(to top, rgba(0, 123, 255, 0.5), rgba(0, 123, 255, 0));
+  pointer-events: none;
+  border-radius: 0 0 1rem 1rem; 
+  transition: none; /* hapus transisi background */
+}
+
+.main-thumb {
+  width: 70%;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover hanya zoom + shadow */
+.main-thumb:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Hilangkan efek hover overlay */
+.anime-thumb-container:hover::after {
+  /* kosongkan */
+}
+
+/* --- Info container --- */
+.anime-info-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+/* --- Judul --- */
+.anime-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text, #0f1724);
+  letter-spacing: 0.3px;
+}
+
+/* --- Rating --- */
+.anime-rating {
+  display: inline-block;
+  padding: 4px 12px;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease;
+}
+
+.anime-rating:hover {
+  transform: scale(1.05);
+}
+
+/* --- Genre badges --- */
+.anime-genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.anime-genres .badge {
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  color: #fff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.anime-genres .badge:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* --- Synopsis --- */
+.anime-synopsis {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--muted, #6b7280);
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Info tabel */
+.anime-info table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.anime-info table td {
+  padding: 8px 12px;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(15,23,42,0.08);
+}
+
+/* --- Episodes grid --- */
+.anime-episodes {
+  width: 100%;
+}
+
+.anime-episodes h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.anime-episodes ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.anime-episodes a {
+  display: block;
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 0.5rem;
+  background: var(--surface);
+  border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.anime-episodes a:hover {
+  background: var(--accent1);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(37,99,235,0.2);
+}
+
+.anime-episodes a.active {
+  background: var(--accent1);
+  color: white;
+  font-weight: 600;
+}
+
+/* button nonton episode */
+.btn-watch-ep1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* center teks & icon */
+  gap: .3rem; /* jarak icon & teks */
+  border: none;
+  padding: .3rem .8rem; /* cukup nyaman dan proporsional */
+  border-radius: 9999px; /* pill shape */
+  font-weight: 600;
+  font-size: .85rem;
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent1, #ff416c), var(--accent2, #ff4b2b));
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(37,99,235,0.1);
+  transition: transform .14s cubic-bezier(.2,.8,.2,1), box-shadow .14s ease;
+  white-space: nowrap; /* tetap satu baris */
+}
+
+.btn-watch-ep1 i {
+  font-size: 0.9rem;
+}
+
+/* hover/active */
+.btn-watch-ep1:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(37,99,235,0.14);
+}
+
+.btn-watch-ep1:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(37,99,235,0.1);
+}
+
+/* --- Responsif --- */
+@media (max-width: 720px) {
+  .anime-detail-wrapper {
+    padding: 1rem;
+  }
+
+  .anime-synopsis {
+    padding: 0 0.5rem;
+  }
+
+  .anime-episodes ul {
+    max-height: 250px;
+  }
+}
+
+/* --- Dark mode --- */
+@media (prefers-color-scheme: dark) {
+  .anime-detail-wrapper {
+    background: var(--surface, rgba(10,14,20,0.55));
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  .anime-title,
+  .anime-info table td:first-child {
+    color: #e6eef8;
+  }
+
+  .anime-synopsis {
+    color: var(--muted, #9ca3af);
+  }
+
+  .anime-episodes a {
+    background: rgba(255,255,255,0.05);
+    color: var(--accent1);
+  }
+
+  .anime-episodes a:hover {
+    background: rgba(37,99,235,0.15);
+  }
+
+  .anime-episodes a.active {
+    background: rgba(37,99,235,0.25);
+  }
+}
+</style>
+<style id="dark-red-theme-override">
+  @keyframes gradient-move {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+
+  body.dark-red {
+    --bg: #1a1a1a;
+    --surface: rgba(30, 30, 30, 0.7);
+    --text: #f1f1f1;
+    --muted: #a1a1a1;
+    --accent1: #e53e3e; /* Red-500 */
+    --accent2: #c53030; /* Red-600 */
+    
+    /* Optimized: Static glow from top */
+    background-color: #1a1a1a;
+    background-image: radial-gradient(circle at top, rgba(229, 62, 62, 0.15), transparent 40%);
+    
+    color: var(--text);
+  }
+
+  .dark-red header {
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.7));
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px) saturate(120%);
+  }
+
+  .dark-red .anime-detail-wrapper {
+    background: var(--surface);
+    border: 1px solid rgba(229, 62, 62, 0.2);
+    box-shadow: 0 8px 32px rgba(229, 62, 62, 0.2), 0 0 15px rgba(229, 62, 62, 0.1) inset;
+  }
+
+  .dark-red .anime-title {
+    text-shadow: 0 0 8px rgba(229, 62, 62, 0.5);
+  }
+
+  .dark-red .main-thumb {
+    border: 3px solid transparent;
+    background-image: linear-gradient(#1a1a1a, #1a1a1a), linear-gradient(to right, #e53e3e, #c53030, #e53e3e);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: gradient-move 3s linear infinite;
+  }
+
+  .dark-red .anime-rating,
+  .dark-red .anime-genres .badge {
+    background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  }
+
+  .dark-red .anime-episodes a {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+  }
+
+  .dark-red .anime-episodes a:hover {
+    background: var(--accent1);
+    color: white;
+    box-shadow: 0 6px 12px rgba(229, 62, 62, 0.2);
+  }
+  
+  .dark-red .btn-watch-ep1 {
+     background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  }
+
+  .dark-red .anime-thumb-container::after {
+    background: linear-gradient(to top, rgba(229, 62, 62, 0.5), rgba(229, 62, 62, 0));
+  }
+</style>
+</head>
+<body class="text-gray-900 dark-red">
+
+    <!-- Loader Overlay -->
+    <div id="full-page-loader-wrapper" class="dark-red">
+        <div class="loader"></div>
+    </div>
+
+    <header class="flex items-center sticky top-0 z-50" style="padding: 1rem 2rem;">
+      <button id="backBtn" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <h1 class="page-title">Detail Anime</h1>
+    </header>
+
+ 
+
+  <main class="p-4 space-y-8">
+  <div id="loadingContainer" class="container mx-auto p-4">
+  <div class="skeleton-info-container">
+    <div class="skeleton-info-header">
+      <div class="skeleton skeleton-title"></div>
+      <div class="skeleton skeleton-subtitle"></div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-6">
+      <div class="md:w-1/3">
+        <div class="skeleton skeleton-img"></div>
+      </div>
+      <div class="md:w-2/3">
+        <div class="skeleton-info-main">
+          <div class="skeleton-text-block">
+            <div class="skeleton skeleton-line"></div>
+            <div class="skeleton skeleton-line"></div>
+            <div class="skeleton skeleton-line"></div>
+            <div class="skeleton skeleton-line"></div>
+          </div>
+          <div class="skeleton-grid">
+            <div class="skeleton skeleton-item"></div>
+            <div class="skeleton skeleton-item"></div>
+            <div class="skeleton skeleton-item"></div>
+            <div class="skeleton skeleton-item"></div>
+            <div class="skeleton skeleton-item"></div>
+            <div class="skeleton skeleton-item"></div>
+          </div>
+          <div class="skeleton skeleton-title" style="width: 50%;"></div>
+          <div class="skeleton-episode-list">
+            <div class="skeleton skeleton-episode"></div>
+            <div class="skeleton skeleton-episode"></div>
+            <div class="skeleton skeleton-episode"></div>
+            <div class="skeleton skeleton-episode"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="animeDetail" class="container mx-auto p-4" style="display: none;">
+  <!-- Content will be loaded here -->
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="md:w-1/3">
+      <img id="animePoster" src="" alt="Anime Poster" class="w-full h-auto rounded-lg shadow-lg">
+    </div>
+    <div class="md:w-2/3">
+      <h1 id="animeTitle" class="text-3xl font-bold mb-2"></h1>
+      <p id="animeJapaneseTitle" class="text-lg text-gray-600 mb-4"></p>
+      <div class="flex items-center mb-4">
+        <span id="animeRating" class="text-yellow-500 text-xl mr-2"></span>
+        <span id="animeStatus" class="bg-blue-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"></span>
+      </div>
+      <p id="animeSynopsis" class="text-gray-700 leading-relaxed mb-4"></p>
+      <div class="grid grid-cols-2 gap-2 mb-4">
+        <div><span class="font-semibold">Tipe:</span> <span id="animeType"></span></div>
+        <div><span class="font-semibold">Episode:</span> <span id="animeEpisodes"></span></div>
+        <div><span class="font-semibold">Status:</span> <span id="animeStatusDetail"></span></div>
+        <div><span class="font-semibold">Tayang:</span> <span id="animeReleased"></span></div>
+        <div><span class="font-semibold">Studio:</span> <span id="animeStudio"></span></div>
+        <div><span class="font-semibold">Genre:</span> <span id="animeGenre"></span></div>
+      </div>
+      <h2 class="text-2xl font-bold mb-2">Link Nonton</h2>
+      <div id="episodeList" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+        <!-- Episode links will be loaded here -->
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Footer / Copyright & Contact -->
+</main>
+
+<script>
+    window.addEventListener('load', function() {
+        console.log('Window loaded. Attempting to hide full-page loader.');
+        const fullPageLoader = document.getElementById('full-page-loader-wrapper');
+        if (fullPageLoader) {
+            setTimeout(() => {
+                fullPageLoader.classList.add('hidden-loader');
+                console.log('Full-page loader hidden.');
+            }, 1000);
+        } else {
+            console.log('Full-page loader element not found.');
+        }
+    });
+</script>
+<script type="module">
+    import { addAnimeToHistory, waitForAuth } from "./assets/history-logic.js";
+
+    const API_BASE_URL = "https://www.sankavollerei.com/anime";
+    const loadingContainer = document.getElementById('loadingContainer');
+    const animeDetailContainer = document.getElementById('animeDetail');
+
+    async function loadDetail(retries = 3) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const slug = urlParams.get('slug');
+
+        loadingContainer.style.display = 'block';
+        animeDetailContainer.style.display = 'none';
+
+        if (!slug) {
+            animeDetailContainer.innerHTML = '<p class="text-center text-red-500">Slug anime tidak ditemukan di URL.</p>';
+            loadingContainer.style.display = 'none';
+            animeDetailContainer.style.display = 'block';
+            return;
+        }
+
+        try {
+            const res = await axios.get(`https://apis.yanzkageno.biz.id/api/animeindo/detail/${slug}`);
+            const data = res.data; // Data is at the root
+
+            if (!data || !data.title) { // Check for a key field like title
+                throw new Error("Data anime tidak ditemukan dari API");
+            }
+
+            await waitForAuth();
+            addAnimeToHistory(slug);
+
+            document.title = data.title || 'Detail Anime';
+
+            const genresHTML = (data.genres || []).map(g => `<span class="badge">${g.genre_name}</span>`).join(' ');
+            const episodesHTML = (data.episodes || []).map(ep => 
+                `<li><a href="preview.html?slug=${ep.episode_slug}">${ep.episode_title}</a></li>`
+            ).join('');
+
+            const firstEpisodeSlug = (data.episodes || [])[0]?.episode_slug || null;
+
+            // Simplified HTML structure as many fields are missing from the new API
+            animeDetailContainer.innerHTML = `
+                <div class="anime-detail-wrapper">
+                    <div class="anime-thumb-container">
+                        <img src="${data.image}" alt="${data.title}" class="main-thumb">
+                    </div>
+                    <div class="anime-info-container">
+                        <h2 class="anime-title">${data.title}</h2>
+                        <div class="anime-genres">${genresHTML}</div>
+                        <p class="anime-synopsis">${data.synopsis || 'Sinopsis tidak tersedia.'}</p>
+                        ${firstEpisodeSlug ? `<div class="flex justify-center gap-4 mt-4"><button id="watchEp1Btn" class="btn-watch-ep1"><i class="fas fa-play"></i> Nonton Episode 1</button></div>` : ''}
+                        <div class="anime-episodes"><h3>Episodes:</h3><ul>${episodesHTML}</ul></div>
+                    </div>
+                </div>
+            `;
+
+            if (firstEpisodeSlug) {
+                document.getElementById('watchEp1Btn').addEventListener('click', () => {
+                    window.location.href = `preview.html?slug=${firstEpisodeSlug}`;
+                });
+            }
+
+            loadingContainer.style.display = 'none';
+            animeDetailContainer.style.display = 'block';
+
+        } catch (err) {
+            console.error("❌ Gagal memuat detail anime:", err);
+            if (retries > 0) {
+                animeDetailContainer.innerHTML = `<p class="text-center text-red-500">Tidak bisa memuat detail anime. Mencoba lagi... (${retries} percobaan tersisa)</p>`;
+                setTimeout(() => loadDetail(retries - 1), 3000); // Retry after 3 seconds
+            } else {
+                animeDetailContainer.innerHTML = '<p class="text-center text-red-500">Tidak bisa memuat detail anime. Silakan coba refresh halaman.</p>';
+                loadingContainer.style.display = 'none';
+                animeDetailContainer.style.display = 'block';
+            }
+        }
+    }
+
+    loadDetail();
+</script>
+<script>
+  document.getElementById('backBtn').addEventListener('click', () => {
+    history.back();
+  });
+</script>
+<script type="module">
+  import { initializePresence } from './assets/presence.js';
+  // Use a timeout to ensure the main script has set the document title first
+  setTimeout(() => {
+      initializePresence(`Info: ${document.title}`);
+  }, 2000);
+</script>
+</body>
+</html>

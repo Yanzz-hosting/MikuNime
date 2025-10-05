@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Anime</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/bottom-nav.css">
+    <style>
+        .anime-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+        .anime-card {
+            background: var(--surface);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+            overflow: hidden;
+        }
+        .anime-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+        .anime-card a {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .anime-card-title {
+            font-weight: 600;
+            padding: 1rem;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (prefers-color-scheme: dark) {
+            .anime-card {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            }
+            .anime-card:hover {
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            }
+        }
+    </style>
+    <style>
+/* =======================
+   SKELETON LOADER
+======================= */
+.skeleton {
+  background-color: #e0e0e0; /* Light gray for skeleton */
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+.skeleton-dark {
+  background-color: #333; /* Dark gray for skeleton in dark mode */
+  background: linear-gradient(90deg, #444 25%, #333 50%, #444 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-list-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(136, 136, 136, 0.116);
+}
+
+.skeleton-list-item .skeleton-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.skeleton-list-item .skeleton-text-container {
+  flex-grow: 1;
+}
+
+.skeleton-list-item .skeleton-title {
+  height: 1em;
+  width: 70%;
+  margin-bottom: 0.5em;
+}
+
+.skeleton-list-item .skeleton-subtitle {
+  height: 0.8em;
+  width: 40%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .skeleton {
+    background: linear-gradient(90deg, #444 25%, #333 50%, #444 75%);
+    background-size: 200% 100%;
+  }
+}
+    </style>
+<style id="dark-theme-override">
+  :root{
+    --bg:#071025;
+    --surface: rgba(10,14,20,0.55);
+    --text:#e6eef8;
+    --muted:#9ca3af;
+    --accent1: #8B0000; /* Darker Red */
+    --accent2: #DC143C; /* Crimson */
+  }
+  body{
+    background: linear-gradient(180deg,#041226 0%, #071025 60%);
+    color:var(--text);
+  }
+  header{
+    background: linear-gradient(180deg, rgba(8,10,15,0.6), rgba(6,8,12,0.55));
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  .anime-card {
+    background: rgba(10,14,20,0.55);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .anime-card a {
+    color: var(--text);
+  }
+  .anime-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  }
+  body.dark .antialiased { /* Target the body class */
+    color: var(--text);
+  }
+  .dark .text-gray-500 { /* For "Tidak ada anime yang ditemukan." message */
+    color: #9ca3af; /* var(--muted) */
+  }
+  .dark .text-red-500 { /* For error messages */
+    color: #ef4444;
+  }
+  .dark .bg-gray-200 { /* For the letter headers */
+    background-color: #374151; /* Darker gray */
+  }
+  .dark .dark\:bg-gray-700 { /* For the letter headers */
+    background-color: #374151;
+  }
+  .dark .dark\:text-gray-700 { /* For the letter headers */
+    color: #e6eef8;
+  }
+  .dark .text-gray-900 { /* For the main text */
+    color: #e6eef8;
+  }
+  .dark .text-blue-600 { /* For the gradient-text h1 */
+    color: var(--accent1); /* Use dark red accent */
+  }
+  .gradient-text { /* Ensure gradient text is visible in dark mode */
+    -webkit-text-fill-color: var(--accent1);
+  }
+  .dark .anime-card-title {
+    color: #93c5fd !important; /* Dark light blue */
+  }
+</style>
+</head>
+<body class="antialiased dark">
+
+    <div id="loadingContainer" class="flex justify-center items-center h-screen">
+        <p class="text-lg font-semibold">Memuat daftar anime...</p>
+    </div>
+
+    <main id="mainContent" class="container mx-auto p-4" style="display: none;">
+        <div class="card max-w-2xl mx-auto">
+            <div class="p-5">
+                <h1 class="text-2xl font-bold text-center gradient-text mb-6">Daftar Semua Anime</h1>
+            </div>
+            <div id="animeListContainer">
+                <!-- Konten diisi oleh JavaScript -->
+            </div>
+        </div>
+    </main>
+    
+    <nav class="bottom-nav">
+      <a href="home.html" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="search.html" class="nav-link"><i class="fas fa-search"></i><span>Cari</span></a>
+      <a href="list.html" class="nav-link active"><i class="fas fa-list"></i><span>Daftar</span></a>
+      <a href="jadwal.html" class="nav-link"><i class="fas fa-film"></i><span>Movies</span></a>
+      <a href="history.html" class="nav-link"><i class="fas fa-history"></i><span>Riwayat</span></a>
+      <a href="profil.html" class="nav-link"><i class="fas fa-user"></i><span>Akun</span></a>
+    </nav>
+
+
+    <script src="assets/list-logic.js"></script>
+</body>
+</html>

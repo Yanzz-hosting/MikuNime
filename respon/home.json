@@ -1,0 +1,448 @@
+{
+  "creator": "Sanka Vollerei",
+  "message": "",
+  "data": {
+    "recent": {
+      "href": "/samehadaku/recent",
+      "samehadakuUrl": "https://v1.samehadaku.how/anime-terbaru/",
+      "animeList": [
+        {
+          "title": "Mizu Zokusei no Mahoutsukai",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/Mizu-Zokusei-no-Mahoutsukai-Episode-11.jpg",
+          "episodes": "11",
+          "releasedOn": "11 hours yang lalu",
+          "animeId": "mizu-zokusei-no-mahoutsukai",
+          "href": "/samehadaku/anime/mizu-zokusei-no-mahoutsukai",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/mizu-zokusei-no-mahoutsukai/"
+        },
+        {
+          "title": "Dandadan Season 2",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/web-17.jpg",
+          "episodes": "12",
+          "releasedOn": "15 hours yang lalu",
+          "animeId": "dandadan-season-2",
+          "href": "/samehadaku/anime/dandadan-season-2",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/dandadan-season-2/"
+        },
+        {
+          "title": "Dr. Stone Season 4 Part 2",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/Dr.-Stone-Season-4-Part-2-Episode-11.jpg",
+          "episodes": "11",
+          "releasedOn": "17 hours yang lalu",
+          "animeId": "dr-stone-season-4-part-2",
+          "href": "/samehadaku/anime/dr-stone-season-4-part-2",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/dr-stone-season-4-part-2/"
+        },
+        {
+          "title": "Uchuujin MuuMuu",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/Screenshot-26.jpg",
+          "episodes": "24 [END]",
+          "releasedOn": "1 day yang lalu",
+          "animeId": "uchuujin-muumuu",
+          "href": "/samehadaku/anime/uchuujin-muumuu",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/uchuujin-muumuu/"
+        },
+        {
+          "title": "Tsuyokute New Saga",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/web-16.jpg",
+          "episodes": "12",
+          "releasedOn": "1 day yang lalu",
+          "animeId": "tsuyokute-new-saga",
+          "href": "/samehadaku/anime/tsuyokute-new-saga",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/tsuyokute-new-saga/"
+        },
+        {
+          "title": "Onmyou Kaiten ReBirth",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/Onmyou-Kaiten-ReBirth-Episode-12-END.jpg",
+          "episodes": "12",
+          "releasedOn": "2 days yang lalu",
+          "animeId": "onmyou-kaiten-rebirth",
+          "href": "/samehadaku/anime/onmyou-kaiten-rebirth",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/onmyou-kaiten-rebirth/"
+        },
+        {
+          "title": "Jigoku Sensei Nube (2025)",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/web-15.jpg",
+          "episodes": "12",
+          "releasedOn": "2 days yang lalu",
+          "animeId": "jigoku-sensei-nube-2025",
+          "href": "/samehadaku/anime/jigoku-sensei-nube-2025",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/jigoku-sensei-nube-2025/"
+        },
+        {
+          "title": "Jidou Hanbaiki ni Umarekawatta Season 2",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/web-14.jpg",
+          "episodes": "12",
+          "releasedOn": "2 days yang lalu",
+          "animeId": "jidou-hanbaiki-ni-umarekawatta-season-2",
+          "href": "/samehadaku/anime/jidou-hanbaiki-ni-umarekawatta-season-2",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/jidou-hanbaiki-ni-umarekawatta-season-2/"
+        },
+        {
+          "title": "Tensei shitara Dainana Ouji Season 2",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/Tensei-shitara-Dainana-Ouji-Season-2-Episode-11.jpg",
+          "episodes": "11",
+          "releasedOn": "2 days yang lalu",
+          "animeId": "tensei-shitara-dainana-ouji-season-2",
+          "href": "/samehadaku/anime/tensei-shitara-dainana-ouji-season-2",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/tensei-shitara-dainana-ouji-season-2/"
+        },
+        {
+          "title": "Tate no Yuusha no Nariagari Season 4",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/image-2-3.jpg",
+          "episodes": "11",
+          "releasedOn": "2 days yang lalu",
+          "animeId": "tate-no-yuusha-no-nariagari-season-4",
+          "href": "/samehadaku/anime/tate-no-yuusha-no-nariagari-season-4",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/tate-no-yuusha-no-nariagari-season-4/"
+        },
+        {
+          "title": "Clevatess",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/Clevatess-Episode-12-END.jpg",
+          "episodes": "12",
+          "releasedOn": "2 days yang lalu",
+          "animeId": "clevatess",
+          "href": "/samehadaku/anime/clevatess",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/clevatess/"
+        },
+        {
+          "title": "Necronomico",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/image-5.jpg",
+          "episodes": "12 [END]",
+          "releasedOn": "3 days yang lalu",
+          "animeId": "necronomico",
+          "href": "/samehadaku/anime/necronomico",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/necronomico/"
+        },
+        {
+          "title": "Kanojo Okarishimasu Season 4",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/web-13.jpg",
+          "episodes": "12",
+          "releasedOn": "3 days yang lalu",
+          "animeId": "kanojo-okarishimasu-season-4",
+          "href": "/samehadaku/anime/kanojo-okarishimasu-season-4",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/kanojo-okarishimasu-season-4/"
+        },
+        {
+          "title": "Grand Blue Season 2",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/image-3.jpg",
+          "episodes": "11",
+          "releasedOn": "3 days yang lalu",
+          "animeId": "grand-blue-season-2",
+          "href": "/samehadaku/anime/grand-blue-season-2",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/grand-blue-season-2/"
+        },
+        {
+          "title": "Sakamoto Days Cour 2",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/Screenshot-8.jpg",
+          "episodes": "11 [END]",
+          "releasedOn": "4 days yang lalu",
+          "animeId": "sakamoto-days-cour-2",
+          "href": "/samehadaku/anime/sakamoto-days-cour-2",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/sakamoto-days-cour-2/"
+        },
+        {
+          "title": "Summer Pockets",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/09/Summer-Pockets-Episode-24.jpg",
+          "episodes": "24",
+          "releasedOn": "4 days yang lalu",
+          "animeId": "summer-pockets",
+          "href": "/samehadaku/anime/summer-pockets",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/summer-pockets/"
+        }
+      ]
+    },
+    "batch": {
+      "href": "/samehadaku/batch",
+      "samehadakuUrl": "https://v1.samehadaku.how",
+      "batchList": []
+    },
+    "movie": {
+      "href": "/samehadaku/movies",
+      "samehadakuUrl": "https://v1.samehadaku.how//anime-movie/",
+      "animeList": [
+        {
+          "title": "Sidonia no Kishi Ai Tsumugu Hoshi",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/108354.jpg",
+          "releaseDate": "Jun 4, 2021",
+          "animeId": "sidonia-no-kishi-ai-tsumugu-hoshi",
+          "href": "/samehadaku/anime/sidonia-no-kishi-ai-tsumugu-hoshi",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/sidonia-no-kishi-ai-tsumugu-hoshi/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+            },
+            {
+              "title": "Sci-Fi",
+              "genreId": "sci-fi",
+              "href": "/samehadaku/genres/sci-fi",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/sci-fi/"
+            }
+          ]
+        },
+        {
+          "title": "Overlord Movie 3 Sei Oukoku hen",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/04/144101.jpg",
+          "releaseDate": "Sep 20, 2024",
+          "animeId": "overlord-movie-3-sei-oukoku-hen",
+          "href": "/samehadaku/anime/overlord-movie-3-sei-oukoku-hen",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/overlord-movie-3-sei-oukoku-hen/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+            },
+            {
+              "title": "Adventure",
+              "genreId": "adventure",
+              "href": "/samehadaku/genres/adventure",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/adventure/"
+            },
+            {
+              "title": "Fantasy",
+              "genreId": "fantasy",
+              "href": "/samehadaku/genres/fantasy",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/fantasy/"
+            }
+          ]
+        },
+        {
+          "title": "Boku no Hero Academia the Movie 4",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/02/143549.jpg",
+          "releaseDate": "Aug 2, 2024",
+          "animeId": "boku-no-hero-academia-the-movie-4",
+          "href": "/samehadaku/anime/boku-no-hero-academia-the-movie-4",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/boku-no-hero-academia-the-movie-4/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+            },
+            {
+              "title": "School",
+              "genreId": "school",
+              "href": "/samehadaku/genres/school",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/school/"
+            },
+            {
+              "title": "Super Power",
+              "genreId": "super-power",
+              "href": "/samehadaku/genres/super-power",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/super-power/"
+            }
+          ]
+        },
+        {
+          "title": "Haikyuu!! Movie: Gomisuteba no Kessen",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/10/140360.jpg",
+          "releaseDate": "Feb 16, 2024",
+          "animeId": "haikyuu-movie-gomisuteba-no-kessen",
+          "href": "/samehadaku/anime/haikyuu-movie-gomisuteba-no-kessen",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/haikyuu-movie-gomisuteba-no-kessen/",
+          "genreList": [
+            {
+              "title": "School",
+              "genreId": "school",
+              "href": "/samehadaku/genres/school",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/school/"
+            },
+            {
+              "title": "Sports",
+              "genreId": "sports",
+              "href": "/samehadaku/genres/sports",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/sports/"
+            },
+            {
+              "title": "TeamSports",
+              "genreId": "teamsports",
+              "href": "/samehadaku/genres/teamsports",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/teamsports/"
+            }
+          ]
+        },
+        {
+          "title": "Blue Lock: Episode Nagi",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/09/139928.jpg",
+          "releaseDate": "Apr 19, 2024",
+          "animeId": "blue-lock-episode-nagi",
+          "href": "/samehadaku/anime/blue-lock-episode-nagi",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/blue-lock-episode-nagi/",
+          "genreList": [
+            {
+              "title": "Sports",
+              "genreId": "sports",
+              "href": "/samehadaku/genres/sports",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/sports/"
+            },
+            {
+              "title": "Team",
+              "genreId": "team",
+              "href": "/samehadaku/genres/team",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/team/"
+            }
+          ]
+        },
+        {
+          "title": "Spy x Family: Code White",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/08/139388.jpg",
+          "releaseDate": "Dec 22, 2023",
+          "animeId": "spy-x-family-code-white",
+          "href": "/samehadaku/anime/spy-x-family-code-white",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/spy-x-family-code-white/",
+          "genreList": [
+            {
+              "title": "Action",
+              "genreId": "action",
+              "href": "/samehadaku/genres/action",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/action/"
+            },
+            {
+              "title": "Comedy",
+              "genreId": "comedy",
+              "href": "/samehadaku/genres/comedy",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/comedy/"
+            }
+          ]
+        },
+        {
+          "title": "Seishun Buta Yarou wa Randoseru Girl no Yume wo Minai",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2024/06/138379.jpg",
+          "releaseDate": "Dec 1, 2023",
+          "animeId": "seishun-buta-yarou-wa-randoseru-girl-no-yume-wo-minai",
+          "href": "/samehadaku/anime/seishun-buta-yarou-wa-randoseru-girl-no-yume-wo-minai",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/seishun-buta-yarou-wa-randoseru-girl-no-yume-wo-minai/",
+          "genreList": [
+            {
+              "title": "Drama",
+              "genreId": "drama",
+              "href": "/samehadaku/genres/drama",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/drama/"
+            },
+            {
+              "title": "Romance",
+              "genreId": "romance",
+              "href": "/samehadaku/genres/romance",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/romance/"
+            },
+            {
+              "title": "School",
+              "genreId": "school",
+              "href": "/samehadaku/genres/school",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/school/"
+            },
+            {
+              "title": "Supernatural",
+              "genreId": "supernatural",
+              "href": "/samehadaku/genres/supernatural",
+              "samehadakuUrl": "https://v1.samehadaku.how/genre/supernatural/"
+            }
+          ]
+        }
+      ]
+    },
+    "top10": {
+      "href": "/samehadaku/top10",
+      "samehadakuUrl": "https://v1.samehadaku.how/",
+      "animeList": [
+        {
+          "rank": 1,
+          "title": "One Piece",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2020/04/E5RxYkWX0AAwdGH.png.jpg",
+          "score": "8.73",
+          "animeId": "one-piece",
+          "href": "/samehadaku/anime/one-piece",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/one-piece/"
+        },
+        {
+          "rank": 2,
+          "title": "Sakamoto Days Cour 2",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/bx184237-OJAksU2fsIPx.jpg",
+          "score": "7.9",
+          "animeId": "sakamoto-days-cour-2",
+          "href": "/samehadaku/anime/sakamoto-days-cour-2",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/sakamoto-days-cour-2/"
+        },
+        {
+          "rank": 3,
+          "title": "Kaijuu 8-gou Season 2",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/150344.jpg",
+          "score": "7.9",
+          "animeId": "kaijuu-8-gou-season-2",
+          "href": "/samehadaku/anime/kaijuu-8-gou-season-2",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/kaijuu-8-gou-season-2/"
+        },
+        {
+          "rank": 4,
+          "title": "Dandadan Season 2",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/149001.jpg",
+          "score": "8.48",
+          "animeId": "dandadan-season-2",
+          "href": "/samehadaku/anime/dandadan-season-2",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/dandadan-season-2/"
+        },
+        {
+          "rank": 5,
+          "title": "Gachiakuta",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/150432.jpg",
+          "score": "8.02",
+          "animeId": "gachiakuta",
+          "href": "/samehadaku/anime/gachiakuta",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/gachiakuta/"
+        },
+        {
+          "rank": 6,
+          "title": "Tensei shitara Dainana Ouji Season 2",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Tensei-shitara-Dainana-Ouji-Season-2.jpg",
+          "score": "7.67",
+          "animeId": "tensei-shitara-dainana-ouji-season-2",
+          "href": "/samehadaku/anime/tensei-shitara-dainana-ouji-season-2",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/tensei-shitara-dainana-ouji-season-2/"
+        },
+        {
+          "rank": 7,
+          "title": "Mizu Zokusei no Mahoutsukai",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Mizu-Zokusei-no-Mahoutsukai.jpg",
+          "score": "7.13",
+          "animeId": "mizu-zokusei-no-mahoutsukai",
+          "href": "/samehadaku/anime/mizu-zokusei-no-mahoutsukai",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/mizu-zokusei-no-mahoutsukai/"
+        },
+        {
+          "rank": 8,
+          "title": "Dr. Stone Season 4 Part 2",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Dr.-Stone-Season-4-Part-2-V2.jpg",
+          "score": "8.35",
+          "animeId": "dr-stone-season-4-part-2",
+          "href": "/samehadaku/anime/dr-stone-season-4-part-2",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/dr-stone-season-4-part-2/"
+        },
+        {
+          "rank": 9,
+          "title": "Tougen Anki",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Tougen-Anki.jpg",
+          "score": "7.20",
+          "animeId": "tougen-anki",
+          "href": "/samehadaku/anime/tougen-anki",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/tougen-anki/"
+        },
+        {
+          "rank": 10,
+          "title": "Clevatess",
+          "poster": "https://v1.samehadaku.how/wp-content/uploads/2025/07/Clevatess.jpg",
+          "score": "7.89",
+          "animeId": "clevatess",
+          "href": "/samehadaku/anime/clevatess",
+          "samehadakuUrl": "https://v1.samehadaku.how/anime/clevatess/"
+        }
+      ]
+    }
+  },
+  "pagination": null
+}

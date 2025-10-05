@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koleksi Film Anime</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/bottom-nav.css">
+    <style>
+        :root {
+            --bg: #f6f8fb;
+            --surface: rgba(255, 255, 255, 0.85);
+            --text: #0f1724;
+            --muted: #6b7280;
+            --accent1: #2563eb;
+            --accent2: #7c3aed;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text: #e6eef8;
+                --muted: #9ca3af;
+                --bg: #071025;
+                --surface: rgba(10, 14, 20, 0.55);
+            }
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .anime-card {
+            background: var(--surface);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+        }
+        .anime-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(37,99,235,0.12);
+        }
+        .anime-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+        .page-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #fff;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            cursor: pointer;
+            border: none;
+        }
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .anime-grid .anime-card h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 0.5rem 0.5rem 0.25rem 0.5rem;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .anime-grid .anime-card p {
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin: 0 0.5rem 0.25rem 0.5rem;
+        }
+        .anime-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        @media (min-width: 640px) {
+            .anime-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (min-width: 768px) {
+            .anime-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        .skeleton {
+          background-color: #e0e0e0;
+          background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+          background-size: 200% 100%;
+          animation: loading 1.5s infinite;
+          border-radius: 0.5rem;
+        }
+        @keyframes loading {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
+    </style>
+    <style id="dark-theme-override">
+      :root {
+        --bg: #071025;
+        --surface: rgba(10, 14, 20, 0.55);
+        --text: #e6eef8;
+        --muted: #9ca3af;
+        --accent1: #8B0000; /* Darker Red */
+        --accent2: #DC143C; /* Crimson */
+      }
+      body {
+        background: linear-gradient(180deg, #041226 0%, #071025 60%);
+        color: var(--text);
+      }
+      .anime-card {
+        box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      }
+      .skeleton {
+        background: linear-gradient(90deg, #444 25%, #333 50%, #444 75%);
+        background-size: 200% 100%;
+      }
+    </style>
+</head>
+<body class="antialiased dark">
+
+    <main class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold text-center my-6 gradient-text">Koleksi Film Anime</h1>
+
+        <div id="moviesContainer" class="anime-grid">
+            <!-- Movie cards will be loaded here -->
+        </div>
+
+        <div id="moviesNav" class="flex justify-center gap-3 mt-4">
+            <button id="prevPage" class="page-btn">Prev</button>
+            <span id="currentPage" class="px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">1</span>
+            <button id="nextPage" class="page-btn">Next</button>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="home.html" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="search.html" class="nav-link"><i class="fas fa-search"></i><span>Cari</span></a>
+      <a href="list.html" class="nav-link"><i class="fas fa-list"></i><span>Daftar</span></a>
+      <a href="jadwal.html" class="nav-link active"><i class="fas fa-film"></i><span>Movies</span></a>
+      <a href="history.html" class="nav-link"><i class="fas fa-history"></i><span>Riwayat</span></a>
+      <a href="profil.html" class="nav-link"><i class="fas fa-user"></i><span>Akun</span></a>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const API_BASE_URL = "https://apis.yanzkageno.biz.id/api/animeindo/movie/page/";
+        const moviesContainer = document.getElementById('moviesContainer');
+        const prevPageBtn = document.getElementById('prevPage');
+        const nextPageBtn = document.getElementById('nextPage');
+        const currentPageSpan = document.getElementById('currentPage');
+
+        let currentPage = 1;
+
+        function createSkeletonCards() {
+            let skeletonHTML = '';
+            for(let i = 0; i < 10; i++) {
+                skeletonHTML += `
+                    <div class="anime-card">
+                        <div class="skeleton" style="height: 240px;"></div>
+                        <div class="p-3">
+                            <div class="skeleton" style="height: 1.25rem; width: 80%; margin-bottom: 0.5rem;"></div>
+                            <div class="skeleton" style="height: 0.75rem; width: 60%;"></div>
+                        </div>
+                    </div>
+                `;
+            }
+            moviesContainer.innerHTML = skeletonHTML;
+        }
+
+        async function loadMovies(page) {
+            createSkeletonCards();
+            try {
+                const res = await axios.get(`${API_BASE_URL}${page}`);
+                const movies = res.data.results;
+
+                moviesContainer.innerHTML = '';
+                if (!movies || movies.length === 0) {
+                    moviesContainer.innerHTML = '<p class="col-span-full text-center">Tidak ada film ditemukan di halaman ini.</p>';
+                    nextPageBtn.disabled = true;
+                    return;
+                }
+
+                movies.forEach(movie => {
+                    const card = document.createElement('div');
+                    card.className = 'anime-card';
+                    card.addEventListener('click', () => {
+                        window.location.href = `info.html?slug=${movie.slug}`;
+                    });
+
+                    const labelsHTML = (movie.labels || []).map(label => `<span class="text-xs">${label}</span>`).join(' &middot; ');
+
+                    card.innerHTML = `
+                        <img src="${movie.image}" alt="${movie.title}" loading="lazy">
+                        <div class="p-2">
+                            <h3>${movie.title}</h3>
+                            <p>${labelsHTML}</p>
+                        </div>
+                    `;
+                    moviesContainer.appendChild(card);
+                });
+
+                currentPage = page;
+                currentPageSpan.textContent = currentPage;
+                prevPageBtn.disabled = currentPage === 1;
+                nextPageBtn.disabled = movies.length === 0;
+
+            } catch (error) {
+                moviesContainer.innerHTML = '<p class="col-span-full text-center text-red-500">Gagal memuat film.</p>';
+                console.error('Gagal memuat film:', error);
+            }
+        }
+
+        prevPageBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                loadMovies(currentPage - 1);
+            }
+        });
+
+        nextPageBtn.addEventListener('click', () => {
+            loadMovies(currentPage + 1);
+        });
+
+        // Initial load
+        loadMovies(currentPage);
+    </script>
+</body>
+</html>

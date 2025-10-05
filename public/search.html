@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="all">
+    <title>HUASTREAM | Nonton Donghua & Anime Bahasa Indonesia</title>
+    <meta name="description" content="HUASTREAM adalah tempat nonton donghua dan anime online terlengkap dengan subtitle Indonesia. Mulai dari Action, Fantasy, Romance, Isekai, Comedy, hingga Cultivation dan Martial Arts, semua bisa kamu tonton gratis dengan kualitas terbaik. Koleksi lengkap donghua terbaru dan anime populer tersedia di HUASTREAM untuk pengalaman menonton seru tanpa batas.">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="HUASTREAM" />
+    <meta property="og:title" content="HUASTREAM | Nonton Donghua & Anime Bahasa Indonesia" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/Yudzxml/UploaderV2/main/tmp/55337a9f.png" />
+   <meta property="og:description" content="HUASTREAM adalah platform nonton donghua dan anime terbaru dengan subtitle Indonesia. Koleksi lengkap dari Action, Fantasy, Isekai, Romance, hingga Cultivation bisa kamu tonton gratis!" />
+   <meta property="og:url" content="https://huastream.yydz.my.id" />
+   <meta name="keywords" content="nonton donghua, nonton anime, donghua sub indo, anime sub indo, streaming anime, streaming donghua, anime terbaru, donghua terbaru, huastream" itemprop="keywords" />
+   <meta content="Nonton anime dan donghua sub indo terbaru hari ini dengan kualitas terbaik hanya di HUASTREAM." itemprop="headline" />
+    <meta name="thumbnailUrl" content="https://raw.githubusercontent.com/Yudzxml/UploaderV2/main/tmp/55337a9f.png" itemprop="thumbnailUrl" />
+    <meta content="https://huastream.yydz.my.id" itemprop="url" />
+    <link rel="canonical" href="https://huastream.yydz.my.id" />
+    <link rel="icon" href="https://raw.githubusercontent.com/Yudzxml/UploaderV2/main/tmp/26250dc9.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#2563eb" />
+     <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("../service-worker.js")
+     }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/bottom-nav.css">
+
+<style>
+  *,
+*::before,
+*::after { box-sizing: border-box; }
+
+:root{
+  --bg:#f6f8fb;
+  --surface: rgba(255,255,255,0.85);
+  --text:#0f1724;
+  --muted:#6b7280;
+  --accent1:#2563eb;
+  --accent2:#7c3aed;
+  --glass: rgba(255,255,255,0.6);
+}
+
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family:'Poppins', 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#fbfdff 0%, #eef6ff 40%, var(--bg) 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 1rem;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:60;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.65rem 0;
+  backdrop-filter: blur(8px) saturate(120%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.55));
+  border-bottom: 1px solid rgba(15,23,42,0.04);
+  transition: box-shadow .22s ease, transform .18s ease;
+}
+
+header.elev{ box-shadow: 0 8px 30px rgba(15,23,42,0.06); transform: translateY(-1px); }
+
+header h1{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  margin:0;
+  font-weight:800;
+  font-size:1.25rem;
+  letter-spacing:-0.2px;
+  background: linear-gradient(90deg,var(--accent1),var(--accent2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.logo-badge{
+  display:inline-grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(124,58,237,0.10));
+  box-shadow: 0 6px 18px rgba(37,99,235,0.08);
+  color:var(--accent1);
+  font-size:1rem;
+}
+
+#searchForm{
+  display:flex;
+  align-items:center;
+  gap:.3rem;
+  padding:3px 6px;
+  border-radius:9999px;
+  background: var(--surface);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+  border: 1px solid rgba(15,23,42,0.05);
+  transition: box-shadow .18s ease, transform .18s ease;
+  max-width: 260px; 
+}
+
+#searchForm:focus-within{
+  box-shadow: 0 10px 28px rgba(37,99,235,0.08);
+  transform: translateY(-1.5px);
+  border-color: rgba(99,102,241,0.12);
+}
+
+#searchInput{
+  background: transparent;
+  border: none;
+  padding:.4rem .6rem;
+  width: 100%;
+  max-width: 180px;
+  font: 500 .9rem/1.2 'Inter', system-ui, sans-serif;
+  color:var(--text);
+  caret-color: var(--accent1);
+  outline: none;
+}
+
+#searchBtn{
+  display:inline-flex;
+  align-items:center;
+  gap:.3rem;
+  border:none;
+  padding:.4rem .7rem;
+  border-radius:9999px;
+  font-weight:600;
+  font-size:.85rem;
+  color:#fff;
+  background: linear-gradient(90deg,var(--accent1),var(--accent2));
+  cursor:pointer;
+  box-shadow: 0 8px 20px rgba(37,99,235,0.1);
+  transition: transform .14s cubic-bezier(.2,.8,.2,1), box-shadow .14s ease;
+}
+
+#searchBtn:hover{ transform: translateY(-2px); box-shadow: 0 14px 28px rgba(37,99,235,0.14); }
+#searchBtn:active{ transform: translateY(0); box-shadow: 0 6px 16px rgba(37,99,235,0.1); }
+
+@media (max-width:880px){
+  .container{ padding:0 .9rem; }
+  #searchForm{ max-width: 100%; }
+  #searchInput{ max-width: 100%; }
+}
+
+@media (max-width:640px){
+  header{ flex-direction:column; align-items:stretch; gap:.6rem; padding:.6rem 0; }
+  header h1{ justify-content:center; width:100%; }
+  #searchForm{ width:100%; max-width: 100%; } 
+  #searchInput{ flex:1; width:100%; }
+  #searchBtn{ padding:.5rem .7rem; font-size:.85rem; }
+}
+
+@media (prefers-color-scheme: dark){
+  :root{ --text:#e6eef8; --muted:#9ca3af; --bg:#071025; --surface: rgba(10,14,20,0.55);
+          --accent1: #8B0000; /* Darker Red */
+          --accent2: #DC143C; /* Crimson */
+  }
+  body{ background: linear-gradient(180deg,#041226 0%, #071025 60%); color:var(--text); }
+  header{ background: linear-gradient(180deg, rgba(8,10,15,0.6), rgba(6,8,12,0.55)); border-bottom: 1px solid rgba(255,255,255,0.03); }
+  #searchForm{ background: var(--surface); border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 10px 30px rgba(2,6,23,0.45); }
+  #searchInput{ color:var(--text); }
+}
+
+.gradient-icon {
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+</style>
+<style>
+/* --- Card anime --- */
+.anime-card {
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  padding: 0.5rem;
+  height: 100%;
+}
+
+.anime-card:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(37,99,235,0.14);
+}
+
+.anime-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  transition: transform 0.25s ease;
+}
+
+.anime-card:hover img {
+  transform: scale(1.05);
+}
+
+.anime-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0.25rem 0;
+  text-align: center;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.anime-card p {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1rem;
+  text-align: center;
+  margin: 0.15rem 0;
+}
+
+/* --- Genre badge --- */
+.anime-card .genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
+  margin: 0.2rem 0;
+}
+
+.anime-card .badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.anime-card .badge:hover {
+  transform: translateY(-1px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(37,99,235,0.15);
+}
+
+.genre-badge {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: #fff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.genre-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37,99,235,0.15);
+}
+
+.genre-badge.active {
+  background: linear-gradient(90deg, var(--accent2), var(--accent1));
+  box-shadow: 0 6px 16px rgba(37,99,235,0.25);
+}
+
+/* --- Watch link --- */
+.anime-card .watch-link {
+  display: block;
+  text-align: center;
+  padding: 0.3rem 0.6rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.anime-card .watch-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37,99,235,0.1);
+}
+
+/* --- Grid hasil pencarian --- */
+#searchResults {
+  position: relative; /* Needed for the loader */
+  min-height: 200px; /* Give space for loader when empty */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* === Search Loading Animation === */
+.search-loader-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.search-loader-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent1);
+  animation: pulse 1.4s infinite ease-in-out both;
+}
+
+.search-loader-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.search-loader-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes pulse {
+  0%, 80%, 100% {
+    transform: scale(0);
+    box-shadow: none;
+  }
+  40% {
+    transform: scale(1.0);
+    box-shadow: 0 0 25px var(--accent1);
+  }
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+  .anime-card img { height: 130px; }
+  .anime-card h3 { font-size: 0.85rem; }
+  .anime-card p, .anime-card .watch-link, .anime-card .badge { font-size: 0.7rem; }
+}
+
+/* --- Mode gelap --- */
+@media (prefers-color-scheme: dark) {
+  .anime-card {
+    background: rgba(10,14,20,0.55);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  }
+  .anime-card h3 { color: #e6eef8; }
+  .anime-card p { color: #9ca3af; }
+  .anime-card .badge { color: #fff; }
+  .anime-card .watch-link { color: #fff; }
+}
+</style>
+<style>
+/* Tombol Prev / Next */
+#latestAnimeNav {
+  display: none;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.page-btn {
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  border: none;
+}
+
+.page-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37,99,235,0.14);
+}
+
+.page-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(37,99,235,0.1);
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+#currentPage {
+  padding: 0.4rem 0.8rem;
+  border-radius: 9999px;
+  background-color: rgba(0,0,0,0.05);
+  color: var(--text);
+  font-weight: 500;
+}
+
+@media (prefers-color-scheme: dark) {
+  #currentPage {
+    background-color: rgba(255,255,255,0.1);
+    color: var(--text);
+  }
+}
+
+.rekom-text {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 auto;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+}
+
+.rekom-text:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.5);
+}
+
+.rekom-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.searchIcon-text {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 auto;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+}
+
+.searchIcon-text:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.5);
+}
+
+.searchIcon-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+</style>
+<style>
+  /* Style radio button custom */
+.form-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--muted);
+  border-radius: 50%;
+  background: var(--surface);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.form-radio:hover {
+  border-color: var(--accent1);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-radio:checked {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+}
+
+.form-radio:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+label:hover {
+  color: var(--accent1);
+}
+
+/* Flex wrapping for mobile responsiveness */
+.flex-wrap label {
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.flex-wrap label:hover {
+  background: rgba(37, 99, 235, 0.08);
+  transform: translateY(-1px);
+}
+</style>
+<style>
+/* --- Container Centering --- */
+.genre-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* center horizontal */
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+/* --- Radio Button Custom --- */
+.form-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--muted);
+  border-radius: 50%;
+  background-color: var(--surface);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-radio:checked {
+  border-color: var(--accent1);
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+}
+
+.form-radio:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Hover effect */
+.form-radio:hover {
+  border-color: var(--accent1);
+  box-shadow: 0 2px 6px rgba(37,99,235,0.2);
+}
+
+/* --- Label Styling --- */
+label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+label:hover {
+  color: var(--accent1);
+}
+
+/* --- Button Cari Container --- */
+.button-container {
+  display: flex;
+  justify-content: center; /* center horizontal */
+  margin-top: 1rem;
+}
+
+/* --- Button Cari Styling --- */
+#filterGenre {
+  padding: 0.6rem 1.6rem;
+  border: none;
+  border-radius: 50px; /* bulat panjang modern */
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* teks & icon sejajar tengah */
+  gap: 0.5rem;             /* jarak icon & teks */
+  transition: transform 0.15s cubic-bezier(.2,.8,.2,1), 
+              box-shadow 0.15s ease,
+              background 0.3s ease;
+}
+
+/* Hover Effect */
+#filterGenre:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(37,99,235,0.18);
+  background: linear-gradient(90deg, var(--accent2), var(--accent1));
+}
+
+/* Active Effect */
+#filterGenre:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 16px rgba(37,99,235,0.12);
+}
+
+/* Responsive tweak */
+@media (max-width: 640px) {
+  #filterGenre {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+</style>
+<style id="dark-theme-override">
+  :root{
+    --bg:#071025;
+    --surface: rgba(10,14,20,0.55);
+    --text:#e6eef8;
+    --muted:#9ca3af;
+    --accent1: #8B0000; /* Darker Red */
+    --accent2: #DC143C; /* Crimson */
+  }
+  body{
+    background: linear-gradient(180deg,#041226 0%, #071025 60%);
+    color:var(--text);
+  }
+  header{
+    background: linear-gradient(180deg, rgba(8,10,15,0.6), rgba(6,8,12,0.55));
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  #searchForm{
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 10px 30px rgba(2,6,23,0.45);
+  }
+  #searchInput{
+    color:#93c5fd !important; /* Light blue for visibility */
+  }
+  .anime-card {
+    background: rgba(10,14,20,0.55);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  }
+  .anime-card h3 { color: #e6eef8; }
+  .anime-card p { color: #9ca3af; }
+  #currentPage {
+    background-color: rgba(255,255,255,0.1);
+    color: var(--text);
+  }
+  body.dark .text-gray-900 {
+    color: #e6eef8; /* var(--text) */
+  }
+  .dark .text-gray-800 {
+    color: #E5E7EB;
+  }
+  .dark .bg-gray-200 {
+    background-color: #374151;
+  }
+
+  /* New Genre Badge Style */
+  .dark .genre-badge {
+    background: #450a0a !important; /* Dark red, override gradient */
+    border: 1px solid #7f1d1d; /* A slightly lighter red for the border */
+    border-radius: 8px; /* Rounded box shape */
+    color: #fef2f2; /* Light red text */
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .dark .genre-badge:hover {
+    background: #7f1d1d;
+    border-color: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(127, 29, 29, 0.4);
+  }
+
+  .dark .genre-badge.active {
+    background: #b91c1c; /* A brighter red for the active state */
+    border-color: #ef4444;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(185, 28, 28, 0.5);
+    background-image: none; /* Remove gradient */
+  }
+</style>
+
+</head>
+<body class="text-gray-900 dark">
+
+  <!-- Header -->
+  <header class="bg-white shadow p-4 flex justify-between items-center sticky top-0 z-50">
+
+    <form id="searchForm" class="flex items-center">
+      <input type="text" id="searchInput" placeholder="Cari Donghua atau Anime..." class="focus:outline-none px-2 py-1 border rounded" required>
+      <button type="submit" id="searchBtn" class="bg-blue-600 text-white px-3 py-2 hover:bg-blue-700 flex items-center gap-1">
+        <i class="fas fa-search"></i> Cari
+      </button>
+    </form>
+  </header>
+
+<main class="p-4 space-y-8">
+  <!-- Section Pencarian Genre -->
+<section class="my-4">
+  <div class="rekom-text-container mb-2 text-center">
+    <h2 class="rekom-text text-lg font-semibold flex items-center justify-center gap-2">
+      <i class="fas fa-filter"></i> CARI BERDASARKAN GENRE
+    </h2>
+  </div>
+<div class="genre-container"></div>
+
+  <!-- Filter button removed as genre badges are now directly clickable -->
+</section>
+
+  <!-- Section Hasil Search -->
+  <section class="my-4">
+<div class="searchIcon-text-container mb-2 text-center">
+  <h2 class="searchIcon-text text-lg font-semibold flex items-center justify-center gap-2" style="display: none; transform: translateY(9px);">
+    <i class="fas fa-search"></i> HASIL PENCARIAN
+  </h2>
+</div>
+
+    <div id="searchResults" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div id="searchLoader" class="search-loader-container" style="display: none;">
+        <div class="search-loader-dot"></div>
+        <div class="search-loader-dot"></div>
+        <div class="search-loader-dot"></div>
+      </div>
+      <!-- Card anime akan di-render di sini -->
+    </div>
+
+    <!-- Pagination -->
+    <div id="latestAnimeNav" class="flex justify-center items-center gap-3 mt-4">
+      <button id="prevPage" class="page-btn px-3 py-1 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold disabled:opacity-50 disabled:cursor-not-allowed">Prev</button>
+      <span id="currentPage" class="px-3 py-1 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">1</span>
+      <button id="nextPage" class="page-btn px-3 py-1 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold disabled:opacity-50 disabled:cursor-not-allowed">Next</button>
+    </div>
+  </section>
+  
+
+</main>
+  <nav class="bottom-nav">
+    <a href="home.html" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="search.html" class="nav-link active"><i class="fas fa-search"></i><span>Cari</span></a>
+    <a href="list.html" class="nav-link"><i class="fas fa-list"></i><span>Daftar</span></a>
+    <a href="jadwal.html" class="nav-link"><i class="fas fa-film"></i><span>Movies</span></a>
+    <a href="history.html" class="nav-link"><i class="fas fa-history"></i><span>Riwayat</span></a>
+    <a href="profil.html" class="nav-link"><i class="fas fa-user"></i><span>Akun</span></a>
+  </nav>
+
+
+<script>
+const searchForm = document.getElementById('searchForm');
+const searchInput = document.getElementById('searchInput');
+const animeListDiv = document.getElementById('searchResults');
+const labelSearch = document.querySelector('.searchIcon-text');
+const pagination = document.getElementById('latestAnimeNav');
+const genreContainer = document.querySelector('.genre-container');
+
+const API_BASE_URL = "https://apis.yanzkageno.biz.id/api";
+
+// ===== Render hasil ke HTML =====
+function renderAnimeList(animeList) {
+  if (!animeList || animeList.length === 0) {
+    animeListDiv.innerHTML = '<p class="text-center text-gray-500">Tidak ada anime ditemukan.</p>';
+    pagination.style.display = 'none';
+    labelSearch.style.display = 'block';
+    return;
+  }
+
+  animeListDiv.innerHTML = animeList.map(anime => {
+    const slug = anime.slug; // Use slug directly
+    const synopsis = anime.synopsis ? (anime.synopsis.length > 100 ? anime.synopsis.substring(0, 100) + '...' : anime.synopsis) : '';
+    const labels = (anime.labels || []).map(label => `<span class="badge">${label}</span>`).join('');
+
+    return `
+      <div class="anime-card" data-slug="${slug}">
+        <img src="${anime.image}" alt="${anime.title}" loading="lazy">
+        <h3>${anime.title}</h3>
+        <div class="genres">${labels}</div>
+        <p style="font-size: 0.8rem; text-align: left; margin: 0.5rem 0; flex-grow: 1;">${synopsis}</p>
+        <a href="info.html?slug=${slug}" class="watch-link">Details</a>
+      </div>
+    `;
+  }).join('');
+
+  document.querySelectorAll('.anime-card').forEach(card => {
+    card.addEventListener('click', e => {
+      e.preventDefault();
+      const slug = card.dataset.slug;
+      if (slug) {
+        window.location.href = `info.html?slug=${slug}`;
+      }
+    });
+  });
+
+  labelSearch.style.display = 'block';
+  pagination.style.display = 'none';
+}
+
+// ===== Load data berdasarkan kondisi =====
+async function loadAnime(query) {
+  if (!query) return;
+
+  const loader = document.getElementById('searchLoader');
+  animeListDiv.innerHTML = ''; // Clear previous results
+  if (loader) loader.style.display = 'flex'; // Show loader
+
+  try {
+    const res = await fetch(`${API_BASE_URL}/animeindo/search?q=${encodeURIComponent(query)}`);
+    const data = await res.json();
+
+    if (data.results && Array.isArray(data.results)) {
+      renderAnimeList(data.results);
+    } else {
+      throw new Error("Format API pencarian tidak valid");
+    }
+  } catch (err) {
+    console.error('❌ Gagal mencari anime:', err);
+    animeListDiv.innerHTML = '<p class="text-center text-red-500">Gagal melakukan pencarian.</p>';
+  } finally {
+    if (loader) loader.style.display = 'none'; // Hide loader
+  }
+}
+
+async function loadGenres() {
+  try {
+    const res = await axios.get(`${API_BASE_URL}/animeindo/genres`);
+    const genres = res.data.genres;
+
+    if (!Array.isArray(genres)) {
+      throw new Error("Format API genre tidak valid");
+    }
+
+    genreContainer.innerHTML = genres.map(genre => `
+      <button type="button" class="genre-badge badge" data-slug="${genre.genre_slug}">
+        ${genre.genre_name}
+      </button>
+    `).join('');
+
+  } catch (err) {
+    console.error('❌ Gagal memuat genre:', err);
+    genreContainer.innerHTML = '<p class="text-center text-red-500">Gagal memuat genre.</p>';
+  }
+}
+
+async function loadAnimeByGenre(genreSlug) {
+  const loader = document.getElementById('searchLoader');
+  animeListDiv.innerHTML = ''; // Clear previous results
+  if (loader) loader.style.display = 'flex'; // Show loader
+
+  try {
+    const res = await fetch(`${API_BASE_URL}/animeindo/genres/${genreSlug}`);
+    const data = await res.json();
+
+    if (data.results && Array.isArray(data.results)) {
+        renderAnimeList(data.results);
+    } else {
+        throw new Error("Format API pencarian genre tidak valid");
+    }
+  } catch (err) {
+    console.error('❌ Gagal mencari anime berdasarkan genre:', err);
+    animeListDiv.innerHTML = '<p class="text-center text-red-500">Gagal melakukan pencarian berdasarkan genre.</p>';
+  } finally {
+    if (loader) loader.style.display = 'none'; // Hide loader
+  }
+}
+
+
+// ===== Event handler =====
+searchForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const query = searchInput.value.trim();
+  if (query) {
+    // Update URL and load anime
+    const newUrl = `${window.location.pathname}?q=${encodeURIComponent(query)}`;
+    window.history.pushState({path: newUrl}, '', newUrl);
+    loadAnime(query);
+  }
+});
+
+genreContainer.addEventListener('click', e => {
+  const target = e.target.closest('.genre-badge');
+  if (target) {
+    const genreSlug = target.dataset.slug;
+    // Remove 'active' class from all badges
+    document.querySelectorAll('.genre-badge').forEach(badge => badge.classList.remove('active'));
+    // Add 'active' class to the clicked badge
+    target.classList.add('active');
+
+    const newUrl = `${window.location.pathname}?genre=${encodeURIComponent(genreSlug)}`;
+    window.history.pushState({path: newUrl}, '', newUrl);
+    loadAnimeByGenre(genreSlug);
+  }
+});
+
+
+// ===== Load on page entry =====
+loadGenres();
+const urlParams = new URLSearchParams(window.location.search);
+const savedQuery = urlParams.get('q');
+const savedGenre = urlParams.get('genre');
+
+if (savedQuery) {
+  searchInput.value = savedQuery;
+  loadAnime(savedQuery);
+} else if (savedGenre) {
+    loadAnimeByGenre(savedGenre).then(() => {
+        const badge = document.querySelector(`.genre-badge[data-slug="${savedGenre}"]`);
+        if (badge) {
+            badge.classList.add('active');
+        }
+    });
+} else {
+    labelSearch.style.display = 'none';
+    pagination.style.display = 'none';
+}
+</script>
+</body>
